@@ -4,13 +4,17 @@ import re
 def collect_markdown_files(root_dir):
     """
     Collect all Markdown files recursively, with their relative paths.
+    Log the file list into toc.md for debugging.
     """
     md_files = []
-    for root, _, files in os.walk(root_dir):
-        for file in sorted(files):
-            if file.endswith(".md"):
-                relative_path = os.path.relpath(os.path.join(root, file), root_dir)
-                md_files.append(relative_path)
+    with open("toc.md", "w") as toc:
+        toc.write("# Table of Contents\n\n")
+        for root, _, files in os.walk(root_dir):
+            for file in sorted(files):
+                if file.endswith(".md"):
+                    relative_path = os.path.relpath(os.path.join(root, file), root_dir)
+                    md_files.append(relative_path)
+                    toc.write(f"- {relative_path}\n")
     return sorted(md_files, key=lambda f: f.count(os.sep))  # Sort by directory depth
 
 def adjust_image_paths(content, file_path, root_dir):
@@ -50,3 +54,4 @@ if __name__ == "__main__":
     create_combined_md(markdown_files, root_dir, output_file)
 
     print(f"Combined Markdown file created: {output_file}")
+    print(f"File list logged in: toc.md")
