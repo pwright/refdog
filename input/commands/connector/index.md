@@ -14,18 +14,16 @@ refdog_object_has_attributes: true
 
 # Connector command
 
-~~~ shell
+```shell
 skupper connector [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/connector/create.html">Connector create</a></th><td>Create a connector</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/connector/update.html">Connector update</a></th><td>Update a connector</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/connector/delete.html">Connector delete</a></th><td>Delete a connector</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/connector/status.html">Connector status</a></th><td>Display the status of connectors in the current site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/connector/generate.html">Connector generate</a></th><td>Generate a Connector resource</td></tr>
-</table>
+- [Connector create]({{site_prefix}}/commands/connector/create.html): Create a connector
+- [Connector update]({{site_prefix}}/commands/connector/update.html): Update a connector
+- [Connector delete]({{site_prefix}}/commands/connector/delete.html): Delete a connector
+- [Connector status]({{site_prefix}}/commands/connector/status.html): Display the status of connectors in the current site
+- [Connector generate]({{site_prefix}}/commands/connector/generate.html): Generate a Connector resource

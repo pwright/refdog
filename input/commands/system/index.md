@@ -8,21 +8,19 @@ refdog_object_has_attributes: true
 
 # System command
 
-~~~ shell
+```shell
 skupper system [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/system/install.html">System install</a></th><td>Install local system infrastructure and configure the environment</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/uninstall.html">System uninstall</a></th><td>Remove local system infrastructure</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/start.html">System start</a></th><td>Start the Skupper router for the current site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/stop.html">System stop</a></th><td>Stop the Skupper router for the current site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/reload.html">System reload</a></th><td>Reload the site configuration</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/apply.html">System apply</a></th><td>Create or update resources using files or standard input</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/delete.html">System delete</a></th><td>Delete resources using files or standard input</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/system/generate-bundle.html">System generate-bundle</a></th><td>Generate a self-contained site bundle for use on another machine</td></tr>
-</table>
+- [System install]({{site_prefix}}/commands/system/install.html): Install local system infrastructure and configure the environment
+- [System uninstall]({{site_prefix}}/commands/system/uninstall.html): Remove local system infrastructure
+- [System start]({{site_prefix}}/commands/system/start.html): Start the Skupper router for the current site
+- [System stop]({{site_prefix}}/commands/system/stop.html): Stop the Skupper router for the current site
+- [System reload]({{site_prefix}}/commands/system/reload.html): Reload the site configuration
+- [System apply]({{site_prefix}}/commands/system/apply.html): Create or update resources using files or standard input
+- [System delete]({{site_prefix}}/commands/system/delete.html): Delete resources using files or standard input
+- [System generate-bundle]({{site_prefix}}/commands/system/generate-bundle.html): Generate a self-contained site bundle for use on another machine

@@ -14,15 +14,13 @@ refdog_object_has_attributes: true
 
 # Token command
 
-~~~ shell
+```shell
 skupper token [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/token/issue.html">Token issue</a></th><td>Issue a token file redeemable for a link to the current site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/token/redeem.html">Token redeem</a></th><td>Redeem a token file in order to create a link to a remote site</td></tr>
-</table>
+- [Token issue]({{site_prefix}}/commands/token/issue.html): Issue a token file redeemable for a link to the current site
+- [Token redeem]({{site_prefix}}/commands/token/redeem.html): Redeem a token file in order to create a link to a remote site

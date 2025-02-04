@@ -12,18 +12,16 @@ refdog_object_has_attributes: true
 
 # Site command
 
-~~~ shell
+```shell
 skupper site [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/site/create.html">Site create</a></th><td>Create a site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/site/update.html">Site update</a></th><td>Change site settings</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/site/delete.html">Site delete</a></th><td>Delete a site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/site/status.html">Site status</a></th><td>Display the status of a site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/site/generate.html">Site generate</a></th><td>Generate a Site resource</td></tr>
-</table>
+- [Site create]({{site_prefix}}/commands/site/create.html): Create a site
+- [Site update]({{site_prefix}}/commands/site/update.html): Change site settings
+- [Site delete]({{site_prefix}}/commands/site/delete.html): Delete a site
+- [Site status]({{site_prefix}}/commands/site/status.html): Display the status of a site
+- [Site generate]({{site_prefix}}/commands/site/generate.html): Generate a Site resource

@@ -10,38 +10,34 @@ def generate(model):
     append("---")
     append("refdog_links:")
     append("  - title: Command overview")
-    append("    url: overview.html")
+    append("    url: overview.md")
     append("  - title: Concept index")
-    append("    url: /concepts/index.html")
+    append("    url: /concepts/index.md")
     append("  - title: Resource index")
-    append("    url: /resources/index.html")
+    append("    url: /resources/index.md")
     append("---")
     append()
     append("# Skupper commands")
     append()
 
     for group in model.groups:
-        append(f"#### {group.title}")
+        append(f"## {group.title}")
         append()
 
         for command in group.objects:
-            append("<table class=\"objects\">")
-
-            if command.subcommands:
-                summary = f"Overview of {command.name} commands"
-
-                append(f"<tr><th><a href=\"{command.href}\">{command.title}</a></th><td>{summary}</td></tr>")
-
-                for sc in command.subcommands:
-                    append(f"<tr><th><a href=\"{sc.href}\">{sc.title}</a></th><td>{sc.summary}</td></tr>")
-            else:
-                append(f"<tr><th><a href=\"{command.href}\">{command.title}</a></th><td>{command.summary}</td></tr>")
-
-            append("</table>")
+            append(f"### [{command.title}]({command.href})")
+            append()
+            append(f"{command.summary}")
             append()
 
+            if command.subcommands:
+                append("#### Subcommands")
+                append()
+                for sc in command.subcommands:
+                    append(f"- [{sc.title}]({sc.href}): {sc.summary}")
+                append()
         append()
-
+    
     append.write("input/commands/index.md")
 
     for command in model.commands:
@@ -61,9 +57,9 @@ def generate_command(command):
     append()
     append(f"# {command.title_with_type}")
     append()
-    append("~~~ shell")
+    append("```shell")
     append(f"{generate_usage(command)}")
-    append("~~~")
+    append("```")
     append()
 
     if command.description and not command.subcommands:
@@ -76,42 +72,36 @@ def generate_command(command):
     if command.output:
         append("## Output")
         append()
-        append("~~~ console")
+        append("```console")
         append(command.output.strip())
-        append("~~~")
+        append("```")
         append()
 
     if command.subcommands:
         append("## Subcommands")
         append()
-        append("<table class=\"objects\">")
-
         for sc in command.subcommands:
-            append(f"<tr><th><a href=\"{sc.href}\">{sc.title}</a></th><td>{sc.summary}</td></tr>")
-
-        append("</table>")
+            append(f"- [{sc.title}]({sc.href}): {sc.summary}")
         append()
     else:
         if command.examples:
             append("## Examples")
             append()
-            append("~~~ console")
+            append("```console")
             append(command.examples.strip())
-            append("~~~")
+            append("```")
             append()
 
         if command.options:
             append("## Primary options")
             append()
-
             for group in ("positional", "required", "frequently-used", None, "advanced"):
                 for option in command.options:
                     if option.group == group:
                         generate_option(option, append)
-
+            
             append("## Global options")
             append()
-
             for option in command.options:
                 if option.group == "global":
                     generate_option(option, append)
@@ -119,7 +109,6 @@ def generate_command(command):
         if command.errors:
             append("## Errors")
             append()
-
             for error in command.errors:
                 generate_error(error, append)
 
@@ -144,30 +133,29 @@ def generate_usage(command):
 
     return " ".join(parts)
 
+
 def generate_command_fields(command):
     rows = list()
-
-    rows.append(f"<tr><th>Platforms</th><td>{', '.join(command.platforms)}</td>")
+    rows.append(f"Platforms: {', '.join(command.platforms)}")
 
     if command.wait:
-        rows.append(f"<tr><th>Waits for</th><td>{command.wait}</td>")
+        rows.append(f"Waits for: {command.wait}")
+    
+    return "\n".join(rows)
 
-    return f"<table class=\"fields\">{''.join(rows)}</table>"
 
 def generate_option(option, append):
     debug(f"Generating {option}")
 
-    classes = ["attribute"]
     flags = list()
-    prefix = ""
     option_key = option.syntax_name
     type_info = option.type
 
     if not option.positional and option.type != "boolean":
         if option.placeholder:
-            type_info = f"&lt;{option.placeholder}&gt;"
+            type_info = f"<{option.placeholder}>"
         else:
-            type_info = f"&lt;{option.type}&gt;"
+            type_info = f"<{option.type}>"
 
     if option.short_option:
         type_info = f"(-{option.short_option}) {type_info}"
@@ -181,29 +169,19 @@ def generate_option(option, append):
         else:
             flags.append(option.group.replace("-", " "))
 
-    if option.group not in ("positional", "required", "frequently-used", None):
-        classes.append("collapsed")
-
-    append(f"<div class=\"{' '.join(classes)}\">")
-    append(f"<div class=\"attribute-heading\">")
-    append(f"<h3 id=\"{option.id}\">{option_key}</h3>")
-    append(f"<div class=\"attribute-type-info\">{type_info}</div>")
+    append(f"{option_key}")
+    append(f"Type: {type_info}")
 
     if flags:
-        append(f"<div class=\"attribute-flags\">{', '.join(flags)}</div>")
-
-    append("</div>")
-    append("<div class=\"attribute-body\">")
+        append(f"Flags: {', '.join(flags)}")
+    
     append()
-
+    
     if option.description:
         append(option.description.strip())
         append()
-
+    
     append(generate_attribute_fields(option))
-    append()
-    append("</div>")
-    append("</div>")
     append()
 
 def generate_error(error, append):

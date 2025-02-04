@@ -8,18 +8,18 @@ refdog_object_has_attributes: true
 
 # Debug dump command
 
-~~~ shell
+```shell
 skupper debug dump [file] [options]
-~~~
+```
 
 Generate a debug dump file.  Debug dumps collect the details of
 a site so another party can identify and fix a problem.
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Examples
 
-~~~ console
+```console
 # Generate a dump file
 $ skupper debug dump
 Debug dump file: /home/fritz/skupper-dump-west-2024-12-09.tar.gz
@@ -27,17 +27,13 @@ Debug dump file: /home/fritz/skupper-dump-west-2024-12-09.tar.gz
 # Generate a dump file to a particular path
 $ skupper debug dump /tmp/abc.tar.gz
 Debug dump file: /tmp/abc.tar.gz
-~~~
+```
 
 ## Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-file">[file]</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">optional</div>
-</div>
-<div class="attribute-body">
+[file]
+Type: string
+Flags: optional
 
 The name of the file to generate.
 
@@ -46,63 +42,35 @@ The command exits with an error if the file already exists.
 <table class="fields"><tr><th>Default</th><td><p><code>skupper-dump-&lt;site-name&gt;-&lt;date&gt;.tar.gz</code></p>
 </td></table>
 
-</div>
-</div>
-
 ## Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-context">--context</h3>
-<div class="attribute-type-info">&lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--context
+Type: <name>
+Flags: global
 
 Set the kubeconfig context.
 
 <table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-kubeconfig">--kubeconfig</h3>
-<div class="attribute-type-info">&lt;file&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--kubeconfig
+Type: <file>
+Flags: global
 
 Set the path to the kubeconfig file.
 
 <table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--namespace
+Type: (-n) <name>
+Flags: global
 
 Set the current namespace.
 
 <table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+Type: <platform>
+Flags: global
 
 Set the Skupper platform.
 
@@ -115,20 +83,10 @@ Set the Skupper platform.
 </td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
 </td></tr></table></td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+Type: (-h) boolean
+Flags: global
 
 Display help and exit.
 
 
-
-</div>
-</div>

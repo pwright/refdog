@@ -6,15 +6,13 @@ refdog_object_has_attributes: true
 
 # Debug command
 
-~~~ shell
+```shell
 skupper debug [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/debug/check.html">Debug check</a></th><td>Run diagnostic checks</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/debug/dump.html">Debug dump</a></th><td>Generate a debug dump file</td></tr>
-</table>
+- [Debug check]({{site_prefix}}/commands/debug/check.html): Run diagnostic checks
+- [Debug dump]({{site_prefix}}/commands/debug/dump.html): Generate a debug dump file

@@ -14,18 +14,16 @@ refdog_object_has_attributes: true
 
 # Listener command
 
-~~~ shell
+```shell
 skupper listener [subcommand] [options]
-~~~
+```
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Subcommands
 
-<table class="objects">
-<tr><th><a href="{{site_prefix}}/commands/listener/create.html">Listener create</a></th><td>Create a listener</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/listener/update.html">Listener update</a></th><td>Update a listener</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/listener/delete.html">Listener delete</a></th><td>Delete a listener</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/listener/status.html">Listener status</a></th><td>Display the status of listeners in the current site</td></tr>
-<tr><th><a href="{{site_prefix}}/commands/listener/generate.html">Listener generate</a></th><td>Generate a Listener resource</td></tr>
-</table>
+- [Listener create]({{site_prefix}}/commands/listener/create.html): Create a listener
+- [Listener update]({{site_prefix}}/commands/listener/update.html): Update a listener
+- [Listener delete]({{site_prefix}}/commands/listener/delete.html): Delete a listener
+- [Listener status]({{site_prefix}}/commands/listener/status.html): Display the status of listeners in the current site
+- [Listener generate]({{site_prefix}}/commands/listener/generate.html): Generate a Listener resource

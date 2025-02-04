@@ -8,55 +8,37 @@ refdog_object_has_attributes: true
 
 # System delete command
 
-~~~ shell
+```shell
 skupper system delete [options]
-~~~
+```
 
 Delete resources using files or standard input.
 
 <!-- File locations and names -->
 <!-- Need to run reload after -->
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-filename">--filename</h3>
-<div class="attribute-type-info">(-f) &lt;string&gt;</div>
-</div>
-<div class="attribute-body">
+--filename
+Type: (-f) <string>
 
 
-
-</div>
-</div>
 
 ## Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--namespace
+Type: (-n) <name>
+Flags: global
 
 Set the current namespace.
 
 <table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+Type: <platform>
+Flags: global
 
 Set the Skupper platform.
 
@@ -69,20 +51,10 @@ Set the Skupper platform.
 </td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
 </td></tr></table></td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+Type: (-h) boolean
+Flags: global
 
 Display help and exit.
 
 
-
-</div>
-</div>

@@ -12,17 +12,17 @@ refdog_object_has_attributes: true
 
 # Site generate command
 
-~~~ shell
+```shell
 skupper site generate <name> [options]
-~~~
+```
 
 Generate a Site resource.
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Examples
 
-~~~ console
+```console
 # Generate a Site resource and print it to the console
 $ skupper site generate west --enable-link-access
 apiVersion: skupper.io/v2alpha1
@@ -34,32 +34,21 @@ spec:
 
 # Generate a Site resource and direct the output to a file
 $ skupper site generate east > east.yaml
-~~~
+```
 
 ## Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-name">&lt;name&gt;</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;name&gt;
+Type: string
+Flags: required
 
 The name of the resource to be generated.
 
 <table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-enable-link-access">--enable-link-access</h3>
-<div class="attribute-type-info">boolean</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--enable-link-access
+Type: boolean
+Flags: frequently used
 
 Allow external access for links from remote sites.
 
@@ -69,15 +58,8 @@ sites must have link access enabled.
 
 <table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/link.html">Link concept</a>, <a href="{{site_prefix}}/topics/site-linking.html">Site linking</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-output">--output</h3>
-<div class="attribute-type-info">(-o) &lt;format&gt;</div>
-</div>
-<div class="attribute-body">
+--output
+Type: (-o) <format>
 
 Select the output format.
 
@@ -86,15 +68,8 @@ Select the output format.
 </td></tr><tr><th><code>yaml</code></th><td><p>Produce YAML output</p>
 </td></tr></table></td></table>
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-link-access-type">--link-access-type</h3>
-<div class="attribute-type-info">&lt;type&gt;</div>
-</div>
-<div class="attribute-body">
+--link-access-type
+Type: <type>
 
 Configure external access for links from remote sites.
 
@@ -108,15 +83,8 @@ the sites must have link access enabled.
 </td></tr><tr><th><code>loadbalancer</code></th><td><p>Use a Kubernetes load balancer.  <em>Kubernetes only.</em></p>
 </td></tr></table></td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/site-linking.html">Site linking</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-enable-ha">--enable-ha</h3>
-<div class="attribute-type-info">boolean</div>
-</div>
-<div class="attribute-body">
+--enable-ha
+Type: boolean
 
 Configure the site for high availability (HA).  HA sites
 have two active routers.
@@ -128,18 +96,11 @@ window of downtime caused by restarts.
 
 <table class="fields"><tr><th>Default</th><td>False</td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/high-availability.html">High availability</a></td></table>
 
-</div>
-</div>
-
 ## Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+Type: <platform>
+Flags: global
 
 Set the Skupper platform.
 
@@ -152,20 +113,10 @@ Set the Skupper platform.
 </td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
 </td></tr></table></td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+Type: (-h) boolean
+Flags: global
 
 Display help and exit.
 
 
-
-</div>
-</div>

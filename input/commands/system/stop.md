@@ -10,41 +10,30 @@ refdog_object_has_attributes: true
 
 # System stop command
 
-~~~ shell
+```shell
 skupper system stop [options]
-~~~
+```
 
 Stop the Skupper router for the current site.  This stops the
 systemd service for the current namespace.
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
+Platforms: Kubernetes, Docker, Podman, Linux
 
 ## Primary options
 
 ## Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--namespace
+Type: (-n) <name>
+Flags: global
 
 Set the current namespace.
 
 <table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+Type: <platform>
+Flags: global
 
 Set the Skupper platform.
 
@@ -57,20 +46,10 @@ Set the Skupper platform.
 </td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
 </td></tr></table></td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+Type: (-h) boolean
+Flags: global
 
 Display help and exit.
 
 
-
-</div>
-</div>
