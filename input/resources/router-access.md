@@ -1,5 +1,4 @@
 ---
-body_class: object resource
 refdog_links:
 - title: Site linking
   url: /topics/site-linking.html
@@ -28,7 +27,7 @@ RouterAccess resource is used to implement link access for sites.
 
 The name of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -42,7 +41,7 @@ The name of the resource.
 
 The namespace of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a>, <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -85,7 +84,7 @@ current namespace.
 On Docker, Podman, and Linux, the value is the name of a
 directory under `input/certs/` in the current namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/router-tls.html">Router TLS</a>, <a href="https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets">Kubernetes TLS secrets</a>, <a href="{{site_prefix}}/topics/system-tls-credentials.html">System TLS credentials</a></td></table>
+See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -97,7 +96,7 @@ directory under `input/certs/` in the current namespace.
 </div>
 <div class="attribute-body">
 
-<table class="fields"><tr><th>Default</th><td>False</td></table>
+Default: False
 
 </div>
 </div>
@@ -121,11 +120,13 @@ directory under `input/certs/` in the current namespace.
 </div>
 <div class="attribute-body">
 
-<table class="fields"><tr><th>Default</th><td><p><em>On OpenShift, the default is <code>route</code>.  For other
+Default: <p><em>On OpenShift, the default is <code>route</code>.  For other
 Kubernetes flavors, the default is <code>loadbalancer</code>.</em></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>route</code></th><td><p>Use an OpenShift route.  <em>OpenShift only.</em></p>
-</td></tr><tr><th><code>loadbalancer</code></th><td><p>Use a Kubernetes load balancer.</p>
-</td></tr></table></td></table>
+
+Choices: route: <p>Use an OpenShift route.  <em>OpenShift only.</em></p>
+
+loadbalancer: <p>Use a Kubernetes load balancer.</p>
+
 
 </div>
 </div>
@@ -140,8 +141,8 @@ Kubernetes flavors, the default is <code>loadbalancer</code>.</em></p>
 The hostname or IP address of the network interface to bind
 to.  By default, Skupper binds all the interfaces on the host.
 
-<table class="fields"><tr><th>Default</th><td><p><code>0.0.0.0</code></p>
-</td></table>
+Default: <p>0.0.0.0</p>
+
 
 </div>
 </div>
@@ -155,9 +156,9 @@ to.  By default, Skupper binds all the interfaces on the host.
 
 The hostnames and IPs secured by the router TLS certificate.
 
-<table class="fields"><tr><th>Default</th><td><p><em>The current hostname and the IP address of each bound network
+Default: <p><em>The current hostname and the IP address of each bound network
 interface</em></p>
-</td></table>
+
 
 </div>
 </div>
@@ -176,7 +177,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-settings.html">Resource settings</a></td></table>
+See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -197,7 +198,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -212,7 +213,7 @@ The current state of the resource.
 A human-readable status message.  Error messages are reported
 here.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -235,7 +236,7 @@ resource.
 - `Ready`: The router access is ready to use.  All other
   conditions are true.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a>, <a href="https://maelvls.dev/kubernetes-conditions/">Kubernetes conditions</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

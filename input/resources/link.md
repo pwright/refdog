@@ -1,5 +1,4 @@
 ---
-body_class: object resource
 refdog_links:
 - title: Site linking
   url: /topics/site-linking.html
@@ -41,7 +40,7 @@ use an [access token][token] to obtain a link.
 
 The name of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -55,7 +54,7 @@ The name of the resource.
 
 The namespace of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a>, <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -88,7 +87,8 @@ port, and group.
 The configured routing cost of sending traffic over
 the link.
 
-<table class="fields"><tr><th>Default</th><td>1</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/load-balancing.html">Load balancing</a></td></table>
+Default: 1
+See also: Load balancing ({{site_prefix}}/topics/load-balancing.html)
 
 </div>
 </div>
@@ -111,7 +111,7 @@ current namespace.
 On Docker, Podman, and Linux, the value is the name of a
 directory under `input/certs/` in the current namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/router-tls.html">Router TLS</a>, <a href="https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets">Kubernetes TLS secrets</a>, <a href="{{site_prefix}}/topics/system-tls-credentials.html">System TLS credentials</a></td></table>
+See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -130,7 +130,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-settings.html">Resource settings</a></td></table>
+See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -151,7 +151,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -166,7 +166,7 @@ The current state of the resource.
 A human-readable status message.  Error messages are reported
 here.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -217,7 +217,7 @@ resource.
 - `Ready`: The link is ready to use.  All other conditions
   are true.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a>, <a href="https://maelvls.dev/kubernetes-conditions/">Kubernetes conditions</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

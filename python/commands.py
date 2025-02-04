@@ -5,46 +5,70 @@ def generate(model):
 
     make_dir("input/commands")
 
-    append = StringBuilder()
+    append_md = StringBuilder()
+    append_adoc = StringBuilder()
 
-    append("---")
-    append("refdog_links:")
-    append("  - title: Command overview")
-    append("    url: overview.md")
-    append("  - title: Concept index")
-    append("    url: /concepts/index.md")
-    append("  - title: Resource index")
-    append("    url: /resources/index.md")
-    append("---")
-    append()
-    append("# Skupper commands")
-    append()
+    # Markdown output
+    append_md("---")
+    append_md("refdog_links:")
+    append_md("  - title: Command overview")
+    append_md("    url: overview.md")
+    append_md("  - title: Concept index")
+    append_md("    url: /concepts/index.md")
+    append_md("  - title: Resource index")
+    append_md("    url: /resources/index.md")
+    append_md("---")
+    append_md()
+    append_md("# Skupper commands")
+    append_md()
+
+    # AsciiDoc output
+    append_adoc("== Skupper commands")
+    append_adoc()
 
     for group in model.groups:
-        append(f"## {group.title}")
-        append()
+        append_md(f"## {group.title}")
+        append_md()
+
+        append_adoc(f"== {group.title}")
+        append_adoc()
 
         for command in group.objects:
-            append(f"### [{command.title}]({command.href})")
-            append()
-            append(f"{command.summary}")
-            append()
+            append_md(f"### [{command.title}]({command.href})")
+            append_md()
+            append_md(f"{command.summary}")
+            append_md()
+
+            adoc_href = command.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
+            append_adoc(f"=== {command.title}")
+            append_adoc()
+            append_adoc(f"include::{adoc_href}[leveloffset=+1]")
+            append_adoc()
 
             if command.subcommands:
-                append("#### Subcommands")
-                append()
+                append_md("#### Subcommands")
+                append_md()
                 for sc in command.subcommands:
-                    append(f"- [{sc.title}]({sc.href}): {sc.summary}")
-                append()
-        append()
+                    append_md(f"- [{sc.title}]({sc.href}): {sc.summary}")
+                append_md()
+                
+                sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
+                append_adoc(f"=== {sc.title}")
+                append_adoc()
+                append_adoc(f"{sc.summary}")
+                append_adoc()
+                append_adoc(f"include::{sc_href}[leveloffset=+1]")
+                append_adoc()
+
     
-    append.write("input/commands/index.md")
+    append_md.write("input/commands/index.md")
+    append_adoc.write("input/commands/commands.adoc")
 
     for command in model.commands:
         generate_command(command)
-
         for subcommand in command.subcommands:
             generate_command(subcommand)
+
 
 def generate_command(command):
     notice(f"Generating {command.input_file}")
@@ -189,7 +213,7 @@ def generate_error(error, append):
     append()
 
     if error.description:
-        append(f"  <p>{error.description.strip()}</p>")
+        append(f"  {error.description.strip()}")
         append()
 
 class CommandModel(Model):

@@ -1,5 +1,4 @@
 ---
-body_class: object command
 refdog_links:
 - title: Site configuration
   url: /topics/site-configuration.html

@@ -24,7 +24,6 @@ Display help for site commands and exit
 - [Site status]({{site_prefix}}/commands/site/status.html): Display the status of a site
 - [Site generate]({{site_prefix}}/commands/site/generate.html): Generate a Site resource
 
-
 ## Site linking
 
 ### [Token]({{site_prefix}}/commands/token/index.html)
@@ -46,7 +45,6 @@ Display help for link commands and exit
 - [Link delete]({{site_prefix}}/commands/link/delete.html): Delete a link
 - [Link status]({{site_prefix}}/commands/link/status.html): Display the status of links in the current site
 - [Link generate]({{site_prefix}}/commands/link/generate.html): Generate a Link resource for use in a remote site
-
 
 ## Service exposure
 
@@ -74,7 +72,6 @@ Display help for connector commands and exit
 - [Connector status]({{site_prefix}}/commands/connector/status.html): Display the status of connectors in the current site
 - [Connector generate]({{site_prefix}}/commands/connector/generate.html): Generate a Connector resource
 
-
 ## System operations
 
 ### [System]({{site_prefix}}/commands/system/index.html)
@@ -92,7 +89,6 @@ Display help for connector commands and exit
 - [System delete]({{site_prefix}}/commands/system/delete.html): Delete resources using files or standard input
 - [System generate-bundle]({{site_prefix}}/commands/system/generate-bundle.html): Generate a self-contained site bundle for use on another machine
 
-
 ## Debugging operations
 
 ### [Debug]({{site_prefix}}/commands/debug/index.html)
@@ -104,10 +100,8 @@ Display help for debug commands and exit
 - [Debug check]({{site_prefix}}/commands/debug/check.html): Run diagnostic checks
 - [Debug dump]({{site_prefix}}/commands/debug/dump.html): Generate a debug dump file
 
-
 ## Other operations
 
 ### [Version]({{site_prefix}}/commands/version.html)
 
 Display versions of Skupper components
-

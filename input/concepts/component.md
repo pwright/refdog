@@ -1,5 +1,4 @@
 ---
-body_class: object concept
 refdog_links:
 - title: Application concept
   url: /concepts/application.html

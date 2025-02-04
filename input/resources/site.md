@@ -1,5 +1,4 @@
 ---
-body_class: object resource
 refdog_links:
 - title: Site configuration
   url: /topics/site-configuration.html
@@ -57,7 +56,7 @@ spec:
 
 The name of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -71,7 +70,7 @@ The name of the resource.
 
 The namespace of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a>, <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -92,12 +91,18 @@ Sites and links are the basis for creating application
 networks.  In a simple two-site network, at least one of
 the sites must have link access enabled.
 
-<table class="fields"><tr><th>Default</th><td><p><code>none</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>none</code></th><td><p>No linking to this site is permitted.</p>
-</td></tr><tr><th><code>default</code></th><td><p>Use the default link access for the current platform. On OpenShift, the default is <code>route</code>.  For other Kubernetes flavors, the default is <code>loadbalancer</code>.</p>
-</td></tr><tr><th><code>route</code></th><td><p>Use an OpenShift route.  <em>OpenShift only.</em></p>
-</td></tr><tr><th><code>loadbalancer</code></th><td><p>Use a Kubernetes load balancer.</p>
-</td></tr></table></td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/link.html">Link concept</a>, <a href="{{site_prefix}}/topics/site-linking.html">Site linking</a></td></table>
+Default: <p>none</p>
+
+Choices: none: <p>No linking to this site is permitted.</p>
+
+default: <p>Use the default link access for the current platform. On OpenShift, the default is <code>route</code>.  For other Kubernetes flavors, the default is <code>loadbalancer</code>.</p>
+
+route: <p>Use an OpenShift route.  <em>OpenShift only.</em></p>
+
+loadbalancer: <p>Use a Kubernetes load balancer.</p>
+
+Updatable: True
+See also: Link concept ({{site_prefix}}/concepts/link.html), Site linking ({{site_prefix}}/topics/site-linking.html)
 
 </div>
 </div>
@@ -117,7 +122,9 @@ after failure.  This already provides a high level of
 availability.  Enabling HA goes further and reduces the
 window of downtime caused by restarts.
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/high-availability.html">High availability</a></td></table>
+Default: False
+Updatable: True
+See also: High availability ({{site_prefix}}/topics/high-availability.html)
 
 </div>
 </div>
@@ -137,8 +144,10 @@ generated if none is specified.
 This issuer is used by AccessGrant and RouterAccess if a
 specific issuer is not set.
 
-<table class="fields"><tr><th>Default</th><td><p><code>skupper-site-ca</code></p>
-</td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/router-tls.html">Router TLS</a>, <a href="https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets">Kubernetes TLS secrets</a></td></table>
+Default: <p>skupper-site-ca</p>
+
+Updatable: True
+See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
 </div>
 </div>
@@ -164,7 +173,8 @@ Currently, edge sites cannot also have HA enabled.
 "VAN ID" that enables multiple VANs to operate on shared
 router infrastructure. -->
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/large-networks.html">Large networks</a></td></table>
+Default: False
+See also: Large networks ({{site_prefix}}/topics/large-networks.html)
 
 </div>
 </div>
@@ -181,8 +191,9 @@ The name of the Kubernetes service account under which to run
 the Skupper router.  A service account is generated if none is
 specified.
 
-<table class="fields"><tr><th>Default</th><td><p><em>Generated</em></p>
-</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/security/service-accounts/">Kubernetes service accounts</a></td></table>
+Default: <p><em>Generated</em></p>
+
+See also: Kubernetes service accounts (https://kubernetes.io/docs/concepts/security/service-accounts/)
 
 </div>
 </div>
@@ -210,7 +221,7 @@ their default values.
 - `routerLogging`: Set the router logging level.<br/>
   Default: `info`.  Choices: `info`, `warning`, `error`.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-settings.html">Resource settings</a></td></table>
+See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -231,7 +242,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -246,7 +257,7 @@ The current state of the resource.
 A human-readable status message.  Error messages are reported
 here.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -271,7 +282,7 @@ resource.
 - `Ready`: The site is ready for use.  All other conditions
   are true.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a>, <a href="https://maelvls.dev/kubernetes-conditions/">Kubernetes conditions</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>
@@ -287,7 +298,7 @@ resource.
 The name of the Kubernetes secret containing the active
 default signing CA.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/router-tls.html">Router TLS</a>, <a href="https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets">Kubernetes TLS secrets</a></td></table>
+See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
 </div>
 </div>
@@ -305,7 +316,7 @@ port, and group.
 
 These include connection endpoints for link access.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/link.html">Link concept</a>, <a href="{{site_prefix}}/topics/site-linking.html">Site linking</a></td></table>
+See also: Link concept ({{site_prefix}}/concepts/link.html), Site linking ({{site_prefix}}/topics/site-linking.html)
 
 </div>
 </div>
@@ -331,7 +342,7 @@ These include connection endpoints for link access.
 </div>
 <div class="attribute-body">
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/network.html">Network concept</a></td></table>
+See also: Network concept ({{site_prefix}}/concepts/network.html)
 
 </div>
 </div>

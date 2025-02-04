@@ -1,5 +1,4 @@
 ---
-body_class: object concept
 refdog_links:
 - title: Site resource
   url: /resources/site.html

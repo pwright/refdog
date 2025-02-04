@@ -1,5 +1,4 @@
 ---
-body_class: object resource
 refdog_links:
 - title: Service exposure
   url: /topics/service-exposure.html
@@ -51,7 +50,7 @@ spec:
 
 The name of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -65,7 +64,7 @@ The name of the resource.
 
 The namespace of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a>, <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -85,7 +84,8 @@ connectors.  To enable connecting to a service at a
 remote site, the local listener and the remote connector
 must have matching routing keys.
 
-<table class="fields"><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/routing-key.html">Routing key concept</a></td></table>
+Updatable: True
+See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -102,7 +102,7 @@ The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
 establish connections to the remote service.
 
-<table class="fields"><tr><th>Updatable</th><td>True</td></table>
+Updatable: True
 
 </div>
 </div>
@@ -119,7 +119,7 @@ The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
 the remote service.
 
-<table class="fields"><tr><th>Updatable</th><td>True</td></table>
+Updatable: True
 
 </div>
 </div>
@@ -134,7 +134,8 @@ the remote service.
 
 If true, expose each pod as an individual service.
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/individual-pod-services.html">Individual pod services</a></td></table>
+Default: False
+See also: Individual pod services ({{site_prefix}}/topics/individual-pod-services.html)
 
 </div>
 </div>
@@ -157,7 +158,7 @@ current namespace.  On Docker, Podman, and Linux, the value is
 the name of a directory under `input/certs/` in the current
 namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/application-tls.html">Application TLS</a>, <a href="https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets">Kubernetes TLS secrets</a>, <a href="{{site_prefix}}/topics/system-tls-credentials.html">System TLS credentials</a></td></table>
+See also: Application TLS ({{site_prefix}}/topics/application-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -181,7 +182,7 @@ their default values.
   traffic metrics.<br/>
   Default: `auto`.  Choices: `auto`, `none`, `http1`, `http2`.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-settings.html">Resource settings</a></td></table>
+See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -202,7 +203,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -217,7 +218,7 @@ The current state of the resource.
 A human-readable status message.  Error messages are reported
 here.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -232,7 +233,8 @@ here.
 True if there is at least one connector with a matching
 routing key (usually in a remote site).
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/routing-key.html">Routing key concept</a></td></table>
+Default: False
+See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -256,7 +258,7 @@ resource.
 - `Ready`: The listener is ready to use.  All other conditions
   are true.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a>, <a href="https://maelvls.dev/kubernetes-conditions/">Kubernetes conditions</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

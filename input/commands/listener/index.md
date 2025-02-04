@@ -1,5 +1,4 @@
 ---
-body_class: object command
 refdog_links:
 - title: Service exposure
   url: /topics/service-exposure.html

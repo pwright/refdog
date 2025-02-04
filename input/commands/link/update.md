@@ -1,5 +1,4 @@
 ---
-body_class: object command
 refdog_links:
 - title: Site linking
   url: /topics/site-linking.html
@@ -36,11 +35,11 @@ Link "west-6bfn6" is ready.
 
 &lt;name&gt;
 Type: string
-Flags: required
+Flags:: required
 
 The name of the resource to be updated.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 --cost
 Type: <integer>
@@ -48,7 +47,8 @@ Type: <integer>
 The configured routing cost of sending traffic over
 the link.
 
-<table class="fields"><tr><th>Default</th><td>1</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/load-balancing.html">Load balancing</a></td></table>
+Default: 1
+See also: Load balancing ({{site_prefix}}/topics/load-balancing.html)
 
 --timeout
 Type: <duration>
@@ -56,64 +56,77 @@ Type: <duration>
 Raise an error if the operation does not complete in the given
 period of time.
 
-<table class="fields"><tr><th>Default</th><td><p><code>60s</code></p>
-</td><tr><th>Platforms</th><td>Kubernetes</td></table>
+Default: <p>60s</p>
+
+Platforms: Kubernetes
 
 --wait
 Type: <status>
 
 Wait for the given status before exiting.
 
-<table class="fields"><tr><th>Default</th><td><p><code>ready</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>none</code></th><td><p><em>Do not wait</em></p>
-</td></tr><tr><th><code>configured</code></th><td><p>Configured</p>
-</td></tr><tr><th><code>ready</code></th><td><p>Ready</p>
-</td></tr></table></td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+Default: <p>ready</p>
+
+Choices: none: <p><em>Do not wait</em></p>
+
+configured: <p>Configured</p>
+
+ready: <p>Ready</p>
+
+Platforms: Kubernetes
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 ## Global options
 
 --context
 Type: <name>
-Flags: global
+Flags:: global
 
 Set the kubeconfig context.
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
+Platforms: Kubernetes
+See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
 --kubeconfig
 Type: <file>
-Flags: global
+Flags:: global
 
 Set the path to the kubeconfig file.
 
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
+Platforms: Kubernetes
+See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
 --namespace
 Type: (-n) <name>
-Flags: global
+Flags:: global
 
 Set the current namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 --platform
 Type: <platform>
-Flags: global
+Flags:: global
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-<table class="fields"><tr><th>Default</th><td><p><code>kubernetes</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>kubernetes</code></th><td><p>Kubernetes</p>
-</td></tr><tr><th><code>docker</code></th><td><p>Docker</p>
-</td></tr><tr><th><code>podman</code></th><td><p>Podman</p>
-</td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
-</td></tr></table></td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a></td></table>
+Default: <p>kubernetes</p>
+
+Choices: kubernetes: <p>Kubernetes</p>
+
+docker: <p>Docker</p>
+
+podman: <p>Podman</p>
+
+linux: <p>Linux</p>
+
+See also: Platform concept ({{site_prefix}}/concepts/platform.html)
 
 --help
 Type: (-h) boolean
-Flags: global
+Flags:: global
 
 Display help and exit.
 

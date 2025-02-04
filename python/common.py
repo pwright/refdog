@@ -49,7 +49,6 @@ def generate_object_metadata(obj):
         add_link(command)
 
     data = {
-        "body_class": "object {}".format(obj.__class__.__name__.lower()),
         "refdog_object_has_attributes": True,
         "refdog_links": link_data,
     }
@@ -62,7 +61,6 @@ def generate_object_metadata(obj):
 def generate_attribute_fields(attr):
     rows = list()
 
-    # No default for status fields
     if attr.default is not None and getattr(attr, "group", None) != "status":
         default = attr.default
 
@@ -70,32 +68,29 @@ def generate_attribute_fields(attr):
             default = str(default).lower()
         elif isinstance(default, str):
             if not default.startswith("_"):
-                default = f"`{default}`"
+                default = f"{default}"
 
             default = _convert_markdown(default)
 
-        rows.append(f"<tr><th>Default</th><td>{default}</td>")
+        rows.append(f"Default: {default}")
 
     if attr.choices:
-        rows.append(f"<tr><th>Choices</th><td>{generate_attribute_choices(attr)}</td>")
+        rows.append(f"Choices: {generate_attribute_choices(attr)}")
 
     from commands import Option
 
     if attr.platforms and isinstance(attr, Option) and attr.platforms != attr.object.platforms:
-        rows.append(f"<tr><th>Platforms</th><td>{', '.join(attr.platforms)}</td>")
+        rows.append(f"Platforms: {', '.join(attr.platforms)}")
 
     if attr.updatable:
-        rows.append(f"<tr><th>Updatable</th><td>{attr.updatable}</td>")
+        rows.append(f"Updatable: {attr.updatable}")
 
     links = generate_attribute_links(attr)
 
     if links:
-        rows.append(f"<tr><th>See also</th><td>{links}</td>")
+        rows.append(f"See also: {links}")
 
-    if rows:
-        return f"<table class=\"fields\">{''.join(rows)}</table>"
-
-    return ""
+    return "\n".join(rows)
 
 def generate_attribute_choices(attr):
     rows = list()
@@ -105,9 +100,9 @@ def generate_attribute_choices(attr):
         description = choice_data["description"].replace("\n", " ").strip()
         description = _convert_markdown(description)
 
-        rows.append(f"<tr><th><code>{name}</code></th><td>{description}</td></tr>")
+        rows.append(f"{name}: {description}")
 
-    return "<table class=\"choices\">{}</table>".format("".join(rows))
+    return "\n".join(rows)
 
 def generate_attribute_links(attr):
     out = list()
@@ -118,7 +113,7 @@ def generate_attribute_links(attr):
         if url.startswith("/"):
             url = "{{site_prefix}}" + url
 
-        out.append(f"<a href=\"{url}\">{title}</a>")
+        out.append(f"{title} ({url})")
 
     return ", ".join(out)
 

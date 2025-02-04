@@ -1,5 +1,4 @@
 ---
-body_class: object resource
 refdog_links:
 - title: Attached connectors
   url: /topics/attached-connectors.html
@@ -28,7 +27,7 @@ The name of the resource.
 The name must be the same as that of the associated
 AttachedConnector resource in the connector namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
+See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -42,7 +41,7 @@ AttachedConnector resource in the connector namespace.
 
 The namespace of the resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/platform.html">Platform concept</a>, <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a>, <a href="{{site_prefix}}/topics/system-namespaces.html">System namespaces</a></td></table>
+See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -78,7 +77,8 @@ connectors.  To expose a local workload to a remote site, the
 remote listener and the local connector must have matching
 routing keys.
 
-<table class="fields"><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/routing-key.html">Routing key concept</a></td></table>
+Updatable: True
+See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -93,7 +93,8 @@ routing keys.
 
 If true, expose each pod as an individual service.
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>See also</th><td><a href="{{site_prefix}}/topics/individual-pod-services.html">Individual pod services</a></td></table>
+Default: False
+See also: Individual pod services ({{site_prefix}}/topics/individual-pod-services.html)
 
 </div>
 </div>
@@ -112,7 +113,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-settings.html">Resource settings</a></td></table>
+See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -133,7 +134,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -148,7 +149,8 @@ The current state of the resource.
 True if there is at least one listener with a matching routing
 key (usually in a remote site).
 
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>See also</th><td><a href="{{site_prefix}}/concepts/routing-key.html">Routing key concept</a></td></table>
+Default: False
+See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -164,7 +166,7 @@ key (usually in a remote site).
 A set of named conditions describing the current state of the
 resource.
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site_prefix}}/topics/resource-status.html">Resource status</a>, <a href="https://maelvls.dev/kubernetes-conditions/">Kubernetes conditions</a></td></table>
+See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

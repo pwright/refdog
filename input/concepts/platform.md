@@ -1,5 +1,4 @@
 ---
-body_class: object concept
 refdog_links:
 - title: Site concept
   url: /concepts/site.html

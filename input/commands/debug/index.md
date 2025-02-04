@@ -1,5 +1,4 @@
 ---
-body_class: object command
 refdog_links: []
 refdog_object_has_attributes: true
 ---

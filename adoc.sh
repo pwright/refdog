@@ -3,4 +3,4 @@ find ./ -name "*.md" \
     -exec sh -c \
     'kramdoc --format=GFM \
         --wrap=ventilate \
-        --output={}.adoc {}' \;
+        --output="$(dirname "{}")/$(basename "{}" .md).adoc" "{}"' \;
