@@ -6,6 +6,9 @@ def generate(model):
     make_dir("input/resources")
 
     append = StringBuilder()
+    append_adoc = StringBuilder()
+    append_adoc("== Skupper resources")
+    append_adoc()
 
     append("---")
     append("refdog_links:")
@@ -27,11 +30,16 @@ def generate(model):
 
         for resource in group.objects:
             append(f"<tr><th><a href=\"{resource.href}\">{resource.title}</a></th><td>{resource.summary}</td></tr>")
+            adoc_href = resource.href.replace(".html", ".adoc").replace("{{site_prefix}}/resources/", "")
+            append_adoc(f"include::{adoc_href}[leveloffset=+1]")
+            append_adoc()
 
         append("</table>")
         append()
 
     append.write("input/resources/index.md")
+    append_adoc.write("input/resources/resources.adoc")
+
 
     for resource in model.resources:
         generate_resource(resource)
