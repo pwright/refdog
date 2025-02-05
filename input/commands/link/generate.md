@@ -23,10 +23,12 @@ Generating a link requires a site with link access enabled.
 The command waits for the site to enter the ready state
 before producing the link.
 
-Platforms: Kubernetes, Docker, Podman, Linux
-Waits for: Site resource ready
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+Waits for:: Site resource ready
+
+
+.Examples
 
 ```console
 # Generate a Link resource and print it to the console
@@ -61,89 +63,119 @@ data:
 $ skupper link generate > link.yaml
 ```
 
-## Primary options
+.Primary options
 
-[name]
-Type: string
+---
+**[name]**
+
+Type:: string
+
 Flags:: optional
+
 
 The name of the resource to be generated.  A name is
 generated if none is provided.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
---cost
-Type: <integer>
+---
+**--cost**
+
+Type:: <integer>
+
 
 The configured routing cost of sending traffic over
 the link.
 
-Default: 1
-See also: Load balancing ({{site_prefix}}/topics/load-balancing.html)
+Default:: 1
+See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
---output
-Type: (-o) <format>
+---
+**--output**
+
+Type:: (-o) <format>
+
 
 Select the output format.
 
-Default: <p>yaml</p>
+Default:: yaml
 
-Choices: json: <p>Produce JSON output</p>
+Choices:: json:: Produce JSON output
 
-yaml: <p>Produce YAML output</p>
+yaml:: Produce YAML output
 
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

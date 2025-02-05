@@ -22,9 +22,10 @@ skupper token redeem <file> [options]
 Redeem a token file in order to create a link to a remote
 site.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+
+.Examples
 
 ```console
 # Redeem an access token
@@ -34,84 +35,114 @@ Link "west-6bfn6" is active.
 You can now safely delete /home/fritz/token.yaml.
 ```
 
-## Primary options
+.Primary options
 
-&lt;file&gt;
-Type: string
+---
+**&lt;file&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the token file to use.
 
 
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
 
---link-cost
-Type: <integer>
+---
+**--link-cost**
+
+Type:: <integer>
+
 
 The link cost to use when creating the link.
 
-Default: 1
-See also: Load balancing ({{site_prefix}}/topics/load-balancing.html)
+Default:: 1
+See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

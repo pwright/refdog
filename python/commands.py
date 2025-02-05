@@ -52,12 +52,13 @@ def generate(model):
                     append_md(f"- [{sc.title}]({sc.href}): {sc.summary}")
                 append_md()
                 
-                sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
-                append_adoc(f"=== {sc.title}")
-                append_adoc()
-                append_adoc(f"{sc.summary}")
-                append_adoc()
-                append_adoc(f"include::{sc_href}[leveloffset=+1]")
+                for sc in command.subcommands:
+                    sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
+                    append_adoc(f"=== {sc.title}")
+                    append_adoc()
+                    append_adoc(f"{sc.summary}")
+                    append_adoc()
+                    append_adoc(f"include::{sc_href}[leveloffset=+1]")
                 append_adoc()
 
     
@@ -102,14 +103,14 @@ def generate_command(command):
         append()
 
     if command.subcommands:
-        append("## Subcommands")
+        append(".Subcommands")
         append()
         for sc in command.subcommands:
             append(f"- [{sc.title}]({sc.href}): {sc.summary}")
         append()
     else:
         if command.examples:
-            append("## Examples")
+            append(".Examples")
             append()
             append("```console")
             append(command.examples.strip())
@@ -117,21 +118,21 @@ def generate_command(command):
             append()
 
         if command.options:
-            append("## Primary options")
+            append(".Primary options")
             append()
             for group in ("positional", "required", "frequently-used", None, "advanced"):
                 for option in command.options:
                     if option.group == group:
                         generate_option(option, append)
             
-            append("## Global options")
+            append(".Global options")
             append()
             for option in command.options:
                 if option.group == "global":
                     generate_option(option, append)
 
         if command.errors:
-            append("## Errors")
+            append(".Errors")
             append()
             for error in command.errors:
                 generate_error(error, append)
@@ -160,10 +161,10 @@ def generate_usage(command):
 
 def generate_command_fields(command):
     rows = list()
-    rows.append(f"Platforms: {', '.join(command.platforms)}")
+    rows.append(f"Platforms:: {', '.join(command.platforms)}\n")
 
     if command.wait:
-        rows.append(f"Waits for: {command.wait}")
+        rows.append(f"Waits for:: {command.wait}\n")
     
     return "\n".join(rows)
 
@@ -193,11 +194,11 @@ def generate_option(option, append):
         else:
             flags.append(option.group.replace("-", " "))
 
-    append(f"{option_key}")
-    append(f"Type: {type_info}")
+    append(f"---\n**{option_key}**\n")
+    append(f"Type:: {type_info}\n")
 
     if flags:
-        append(f"Flags: {', '.join(flags)}")
+        append(f"Flags:: {', '.join(flags)}\n")
     
     append()
     

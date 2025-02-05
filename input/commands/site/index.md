@@ -15,9 +15,10 @@ refdog_object_has_attributes: true
 skupper site [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [Site create]({{site_prefix}}/commands/site/create.html): Create a site
 - [Site update]({{site_prefix}}/commands/site/update.html): Change site settings

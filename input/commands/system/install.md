@@ -26,35 +26,44 @@ It does the following:
 **Note:** With a long-lived controller, this operation would
 also start the controller as a user-scoped systemd service.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Primary options
 
-## Global options
+.Primary options
 
---platform
-Type: <platform>
+.Global options
+
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

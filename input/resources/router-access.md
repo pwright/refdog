@@ -27,7 +27,7 @@ RouterAccess resource is used to implement link access for sites.
 
 The name of the resource.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -41,7 +41,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -84,7 +84,7 @@ current namespace.
 On Docker, Podman, and Linux, the value is the name of a
 directory under `input/certs/` in the current namespace.
 
-See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
+See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -96,7 +96,7 @@ See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS se
 </div>
 <div class="attribute-body">
 
-Default: False
+Default:: False
 
 </div>
 </div>
@@ -120,12 +120,12 @@ Default: False
 </div>
 <div class="attribute-body">
 
-Default: <p><em>On OpenShift, the default is <code>route</code>.  For other
-Kubernetes flavors, the default is <code>loadbalancer</code>.</em></p>
+Default:: <em>On OpenShift, the default is <code>route</code>.  For other
+Kubernetes flavors, the default is <code>loadbalancer</code>.</em>
 
-Choices: route: <p>Use an OpenShift route.  <em>OpenShift only.</em></p>
+Choices:: route:: Use an OpenShift route.  <em>OpenShift only.</em>
 
-loadbalancer: <p>Use a Kubernetes load balancer.</p>
+loadbalancer:: Use a Kubernetes load balancer.
 
 
 </div>
@@ -141,7 +141,7 @@ loadbalancer: <p>Use a Kubernetes load balancer.</p>
 The hostname or IP address of the network interface to bind
 to.  By default, Skupper binds all the interfaces on the host.
 
-Default: <p>0.0.0.0</p>
+Default:: 0.0.0.0
 
 
 </div>
@@ -156,8 +156,8 @@ Default: <p>0.0.0.0</p>
 
 The hostnames and IPs secured by the router TLS certificate.
 
-Default: <p><em>The current hostname and the IP address of each bound network
-interface</em></p>
+Default:: <em>The current hostname and the IP address of each bound network
+interface</em>
 
 
 </div>
@@ -177,7 +177,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -198,7 +198,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -213,7 +213,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 A human-readable status message.  Error messages are reported
 here.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -236,7 +236,7 @@ resource.
 - `Ready`: The router access is ready to use.  All other
   conditions are true.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

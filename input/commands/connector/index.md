@@ -17,9 +17,10 @@ refdog_object_has_attributes: true
 skupper connector [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [Connector create]({{site_prefix}}/commands/connector/create.html): Create a connector
 - [Connector update]({{site_prefix}}/commands/connector/update.html): Update a connector

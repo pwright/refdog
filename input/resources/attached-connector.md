@@ -27,7 +27,7 @@ The name of the resource.
 The name must be the same as that of the associated
 AttachedConnectorBinding resource in the site namespace.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -41,7 +41,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -74,7 +74,7 @@ should be attached to is defined.
 
 The port on the target server to connect to.
 
-Updatable: True
+Updatable:: True
 
 </div>
 </div>
@@ -92,8 +92,8 @@ uses `<label-name>=<label-value>` syntax.
 
 On Kubernetes, either `selector` or `host` is required.
 
-Updatable: True
-See also: Kubernetes label selectors (https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
+Updatable:: True
+See also: [Kubernetes label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 
 </div>
 </div>
@@ -108,7 +108,7 @@ See also: Kubernetes label selectors (https://kubernetes.io/docs/concepts/overvi
 
 If true, include server pods in the `NotReady` state.
 
-Default: False
+Default:: False
 
 </div>
 </div>
@@ -130,7 +130,7 @@ On Kubernetes, the value is the name of a Secret in the current
 namespace. On Docker, Podman, and Linux, the value is the name of
 a directory under `input/certs/` in the current namespace.
 
-See also: Application TLS ({{site_prefix}}/topics/application-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
+See also: [Application TLS]({{site_prefix}}/topics/application-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -149,7 +149,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -170,7 +170,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -186,7 +186,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 A set of named conditions describing the current state of the
 resource.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

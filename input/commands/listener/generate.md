@@ -21,9 +21,10 @@ skupper listener generate <name> <port> [options]
 
 Generate a Listener resource.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+
+.Examples
 
 ```console
 # Generate a Listener resource and print it to the console
@@ -41,102 +42,132 @@ spec:
 $ skupper listener generate backend 8080 > backend.yaml
 ```
 
-## Primary options
+.Primary options
 
-&lt;name&gt;
-Type: string
+---
+**&lt;name&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the resource to be generated.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-&lt;port&gt;
-Type: integer
+---
+**&lt;port&gt;**
+
+Type:: integer
+
 Flags:: required
+
 
 The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
 the remote service.
 
-Updatable: True
+Updatable:: True
 
---routing-key
-Type: <string>
+---
+**--routing-key**
+
+Type:: <string>
+
 Flags:: frequently used
+
 
 The identifier used to route traffic from listeners to
 connectors.  To enable connecting to a service at a
 remote site, the local listener and the remote connector
 must have matching routing keys.
 
-Default: <p><em>Value of name</em></p>
+Default:: <em>Value of name</em>
 
-Updatable: True
+Updatable:: True
 
---host
-Type: <string>
+---
+**--host**
+
+Type:: <string>
+
 Flags:: frequently used
+
 
 The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
 establish connections to the remote service.
 
-Default: <p><em>Value of name</em></p>
+Default:: <em>Value of name</em>
 
-Updatable: True
+Updatable:: True
 
---wait
-Type: <status>
+---
+**--wait**
+
+Type:: <status>
+
 
 Wait for the given status before exiting.
 
-Default: <p>configured</p>
+Default:: configured
 
-Choices: none: <p><em>Do not wait</em></p>
+Choices:: none:: <em>Do not wait</em>
 
-configured: <p>Configured</p>
+configured:: Configured
 
-ready: <p>Ready</p>
+ready:: Ready
 
 
---output
-Type: (-o) <format>
+---
+**--output**
+
+Type:: (-o) <format>
+
 
 Select the output format.
 
-Default: <p>yaml</p>
+Default:: yaml
 
-Choices: json: <p>Produce JSON output</p>
+Choices:: json:: Produce JSON output
 
-yaml: <p>Produce YAML output</p>
+yaml:: Produce YAML output
 
 
-## Global options
+.Global options
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

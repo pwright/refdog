@@ -34,7 +34,7 @@ status are used to generate access tokens from the grant.
 
 The name of the resource.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -48,7 +48,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -65,7 +65,7 @@ See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes 
 The number of times an access token for this grant can
 be redeemed.
 
-Default: 1
+Default:: 1
 
 </div>
 </div>
@@ -80,7 +80,7 @@ Default: 1
 The period of time in which an access token for this
 grant can be redeemed.
 
-Default: <p>15m</p>
+Default:: 15m
 
 
 </div>
@@ -118,7 +118,7 @@ certificate when redeeming a token for this grant.
 
 If not set, `defaultIssuer` on the Site rsource is used.
 
-See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
+See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
 </div>
 </div>
@@ -137,7 +137,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -158,7 +158,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -173,7 +173,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 A human-readable status message.  Error messages are reported
 here.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -246,7 +246,7 @@ service for this grant.
 The secret code used to authenticate access tokens
 submitted for redemption.
 
-Default: <p><em>Generated</em></p>
+Default:: <em>Generated</em>
 
 
 </div>
@@ -270,7 +270,7 @@ resource.
 - `Ready`: The grant is ready to use.  All other
   conditions are true.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

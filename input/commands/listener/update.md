@@ -21,10 +21,12 @@ skupper listener update <name> [options]
 
 Update a listener.
 
-Platforms: Kubernetes, Docker, Podman, Linux
-Waits for: Configured
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+Waits for:: Configured
+
+
+.Examples
 
 ```console
 # Change the host and port
@@ -36,128 +38,170 @@ Listener "database" is configured.
 $ skupper listener update backend --routing-key be2
 ```
 
-## Primary options
+.Primary options
 
-&lt;name&gt;
-Type: string
+---
+**&lt;name&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the resource to be updated.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
---host
-Type: <string>
+---
+**--host**
+
+Type:: <string>
+
 Flags:: frequently used
+
 
 The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
 establish connections to the remote service.
 
-Default: <p><em>Value of name</em></p>
+Default:: <em>Value of name</em>
 
-Updatable: True
+Updatable:: True
 
---port
-Type: <integer>
+---
+**--port**
+
+Type:: <integer>
+
 Flags:: frequently used
+
 
 The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
 the remote service.
 
-Updatable: True
+Updatable:: True
 
---routing-key
-Type: <string>
+---
+**--routing-key**
+
+Type:: <string>
+
 Flags:: frequently used
+
 
 The identifier used to route traffic from listeners to
 connectors.  To enable connecting to a service at a
 remote site, the local listener and the remote connector
 must have matching routing keys.
 
-Default: <p><em>Value of name</em></p>
+Default:: <em>Value of name</em>
 
-Updatable: True
+Updatable:: True
 
---wait
-Type: <status>
+---
+**--wait**
+
+Type:: <status>
+
 
 Wait for the given status before exiting.
 
-Default: <p>ready</p>
+Default:: ready
 
-Choices: none: <p><em>Do not wait</em></p>
+Choices:: none:: <em>Do not wait</em>
 
-configured: <p>Configured</p>
+configured:: Configured
 
-ready: <p>Ready</p>
+ready:: Ready
 
-Platforms: Kubernetes
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+Platforms:: Kubernetes
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
-Platforms: Kubernetes
+Platforms:: Kubernetes
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

@@ -99,7 +99,7 @@ class HTMLRenderer(BaseRenderer):
         return html
 
     def paragraph(self, text: str) -> str:
-        return '<p>' + text + '</p>\n'
+        return '' + text + '\n'
 
     def heading(self, text: str, level: int, **attrs) -> str:
         tag = 'h' + str(level)

@@ -21,10 +21,12 @@ skupper listener delete <name> [options]
 
 Delete a listener.
 
-Platforms: Kubernetes, Docker, Podman, Linux
-Waits for: Deletion
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+Waits for:: Deletion
+
+
+.Examples
 
 ```console
 # Delete a listener
@@ -33,85 +35,115 @@ Waiting for deletion...
 Listener "database" is deleted.
 ```
 
-## Primary options
+.Primary options
 
-&lt;name&gt;
-Type: string
+---
+**&lt;name&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the resource to be deleted.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
-Platforms: Kubernetes
+Platforms:: Kubernetes
 
---wait
-Type: boolean
+---
+**--wait**
+
+Type:: boolean
+
 
 Wait for deletion to complete before exiting.
 
-Default: true
-Platforms: Kubernetes
+Default:: true
+Platforms:: Kubernetes
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

@@ -17,9 +17,10 @@ refdog_object_has_attributes: true
 skupper listener [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [Listener create]({{site_prefix}}/commands/listener/create.html): Create a listener
 - [Listener update]({{site_prefix}}/commands/listener/update.html): Update a listener

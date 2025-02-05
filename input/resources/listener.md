@@ -50,7 +50,7 @@ spec:
 
 The name of the resource.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -64,7 +64,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -84,8 +84,8 @@ connectors.  To enable connecting to a service at a
 remote site, the local listener and the remote connector
 must have matching routing keys.
 
-Updatable: True
-See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
+Updatable:: True
+See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -102,7 +102,7 @@ The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
 establish connections to the remote service.
 
-Updatable: True
+Updatable:: True
 
 </div>
 </div>
@@ -119,7 +119,7 @@ The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
 the remote service.
 
-Updatable: True
+Updatable:: True
 
 </div>
 </div>
@@ -134,8 +134,8 @@ Updatable: True
 
 If true, expose each pod as an individual service.
 
-Default: False
-See also: Individual pod services ({{site_prefix}}/topics/individual-pod-services.html)
+Default:: False
+See also: [Individual pod services]({{site_prefix}}/topics/individual-pod-services.html)
 
 </div>
 </div>
@@ -158,7 +158,7 @@ current namespace.  On Docker, Podman, and Linux, the value is
 the name of a directory under `input/certs/` in the current
 namespace.
 
-See also: Application TLS ({{site_prefix}}/topics/application-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), System TLS credentials ({{site_prefix}}/topics/system-tls-credentials.html)
+See also: [Application TLS]({{site_prefix}}/topics/application-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
 </div>
 </div>
@@ -182,7 +182,7 @@ their default values.
   traffic metrics.<br/>
   Default: `auto`.  Choices: `auto`, `none`, `http1`, `http2`.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -203,7 +203,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -218,7 +218,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 A human-readable status message.  Error messages are reported
 here.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -233,8 +233,8 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 True if there is at least one connector with a matching
 routing key (usually in a remote site).
 
-Default: False
-See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
+Default:: False
+See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -258,7 +258,7 @@ resource.
 - `Ready`: The listener is ready to use.  All other conditions
   are true.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

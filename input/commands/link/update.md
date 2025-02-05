@@ -19,10 +19,12 @@ skupper link update <name> [options]
 
 Change link settings.
 
-Platforms: Kubernetes, Docker, Podman, Linux
-Waits for: Ready
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+Waits for:: Ready
+
+
+.Examples
 
 ```console
 # Change the link cost
@@ -31,102 +33,135 @@ Waiting for status...
 Link "west-6bfn6" is ready.
 ```
 
-## Primary options
+.Primary options
 
-&lt;name&gt;
-Type: string
+---
+**&lt;name&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the resource to be updated.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
---cost
-Type: <integer>
+---
+**--cost**
+
+Type:: <integer>
+
 
 The configured routing cost of sending traffic over
 the link.
 
-Default: 1
-See also: Load balancing ({{site_prefix}}/topics/load-balancing.html)
+Default:: 1
+See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
-Platforms: Kubernetes
+Platforms:: Kubernetes
 
---wait
-Type: <status>
+---
+**--wait**
+
+Type:: <status>
+
 
 Wait for the given status before exiting.
 
-Default: <p>ready</p>
+Default:: ready
 
-Choices: none: <p><em>Do not wait</em></p>
+Choices:: none:: <em>Do not wait</em>
 
-configured: <p>Configured</p>
+configured:: Configured
 
-ready: <p>Ready</p>
+ready:: Ready
 
-Platforms: Kubernetes
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+Platforms:: Kubernetes
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

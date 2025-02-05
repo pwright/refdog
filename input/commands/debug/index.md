@@ -9,9 +9,10 @@ refdog_object_has_attributes: true
 skupper debug [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [Debug check]({{site_prefix}}/commands/debug/check.html): Run diagnostic checks
 - [Debug dump]({{site_prefix}}/commands/debug/dump.html): Generate a debug dump file

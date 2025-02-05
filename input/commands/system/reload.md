@@ -18,4 +18,5 @@ service for the current namespace.
 a router adaptor service, we could avoid a router restart for some
 config changes.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
+

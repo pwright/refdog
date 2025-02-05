@@ -56,7 +56,7 @@ spec:
 
 The name of the resource.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -70,7 +70,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -91,18 +91,18 @@ Sites and links are the basis for creating application
 networks.  In a simple two-site network, at least one of
 the sites must have link access enabled.
 
-Default: <p>none</p>
+Default:: none
 
-Choices: none: <p>No linking to this site is permitted.</p>
+Choices:: none:: No linking to this site is permitted.
 
-default: <p>Use the default link access for the current platform. On OpenShift, the default is <code>route</code>.  For other Kubernetes flavors, the default is <code>loadbalancer</code>.</p>
+default:: Use the default link access for the current platform. On OpenShift, the default is <code>route</code>.  For other Kubernetes flavors, the default is <code>loadbalancer</code>.
 
-route: <p>Use an OpenShift route.  <em>OpenShift only.</em></p>
+route:: Use an OpenShift route.  <em>OpenShift only.</em>
 
-loadbalancer: <p>Use a Kubernetes load balancer.</p>
+loadbalancer:: Use a Kubernetes load balancer.
 
-Updatable: True
-See also: Link concept ({{site_prefix}}/concepts/link.html), Site linking ({{site_prefix}}/topics/site-linking.html)
+Updatable:: True
+See also: [Link concept]({{site_prefix}}/concepts/link.html), [Site linking]({{site_prefix}}/topics/site-linking.html)
 
 </div>
 </div>
@@ -122,9 +122,9 @@ after failure.  This already provides a high level of
 availability.  Enabling HA goes further and reduces the
 window of downtime caused by restarts.
 
-Default: False
-Updatable: True
-See also: High availability ({{site_prefix}}/topics/high-availability.html)
+Default:: False
+Updatable:: True
+See also: [High availability]({{site_prefix}}/topics/high-availability.html)
 
 </div>
 </div>
@@ -144,10 +144,10 @@ generated if none is specified.
 This issuer is used by AccessGrant and RouterAccess if a
 specific issuer is not set.
 
-Default: <p>skupper-site-ca</p>
+Default:: skupper-site-ca
 
-Updatable: True
-See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
+Updatable:: True
+See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
 </div>
 </div>
@@ -173,8 +173,8 @@ Currently, edge sites cannot also have HA enabled.
 "VAN ID" that enables multiple VANs to operate on shared
 router infrastructure. -->
 
-Default: False
-See also: Large networks ({{site_prefix}}/topics/large-networks.html)
+Default:: False
+See also: [Large networks]({{site_prefix}}/topics/large-networks.html)
 
 </div>
 </div>
@@ -191,9 +191,9 @@ The name of the Kubernetes service account under which to run
 the Skupper router.  A service account is generated if none is
 specified.
 
-Default: <p><em>Generated</em></p>
+Default:: <em>Generated</em>
 
-See also: Kubernetes service accounts (https://kubernetes.io/docs/concepts/security/service-accounts/)
+See also: [Kubernetes service accounts](https://kubernetes.io/docs/concepts/security/service-accounts/)
 
 </div>
 </div>
@@ -221,7 +221,7 @@ their default values.
 - `routerLogging`: Set the router logging level.<br/>
   Default: `info`.  Choices: `info`, `warning`, `error`.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -242,7 +242,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -257,7 +257,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 A human-readable status message.  Error messages are reported
 here.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -282,7 +282,7 @@ resource.
 - `Ready`: The site is ready for use.  All other conditions
   are true.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>
@@ -298,7 +298,7 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kuberne
 The name of the Kubernetes secret containing the active
 default signing CA.
 
-See also: Router TLS ({{site_prefix}}/topics/router-tls.html), Kubernetes TLS secrets (https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
+See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
 </div>
 </div>
@@ -316,7 +316,7 @@ port, and group.
 
 These include connection endpoints for link access.
 
-See also: Link concept ({{site_prefix}}/concepts/link.html), Site linking ({{site_prefix}}/topics/site-linking.html)
+See also: [Link concept]({{site_prefix}}/concepts/link.html), [Site linking]({{site_prefix}}/topics/site-linking.html)
 
 </div>
 </div>
@@ -342,7 +342,7 @@ See also: Link concept ({{site_prefix}}/concepts/link.html), Site linking ({{sit
 </div>
 <div class="attribute-body">
 
-See also: Network concept ({{site_prefix}}/concepts/network.html)
+See also: [Network concept]({{site_prefix}}/concepts/network.html)
 
 </div>
 </div>

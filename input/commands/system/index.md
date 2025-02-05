@@ -11,9 +11,10 @@ refdog_object_has_attributes: true
 skupper system [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [System install]({{site_prefix}}/commands/system/install.html): Install local system infrastructure and configure the environment
 - [System uninstall]({{site_prefix}}/commands/system/uninstall.html): Remove local system infrastructure

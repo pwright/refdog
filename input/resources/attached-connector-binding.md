@@ -27,7 +27,7 @@ The name of the resource.
 The name must be the same as that of the associated
 AttachedConnector resource in the connector namespace.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
 </div>
 </div>
@@ -41,7 +41,7 @@ See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/
 
 The namespace of the resource.
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html), Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
 </div>
 </div>
@@ -77,8 +77,8 @@ connectors.  To expose a local workload to a remote site, the
 remote listener and the local connector must have matching
 routing keys.
 
-Updatable: True
-See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
+Updatable:: True
+See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -93,8 +93,8 @@ See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 
 If true, expose each pod as an individual service.
 
-Default: False
-See also: Individual pod services ({{site_prefix}}/topics/individual-pod-services.html)
+Default:: False
+See also: [Individual pod services]({{site_prefix}}/topics/individual-pod-services.html)
 
 </div>
 </div>
@@ -113,7 +113,7 @@ string name and a string value.
 **Note:** In general, we recommend not changing settings from
 their default values.
 
-See also: Resource settings ({{site_prefix}}/topics/resource-settings.html)
+See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
 </div>
 </div>
@@ -134,7 +134,7 @@ The current state of the resource.
   `message` for more information.
 - `Ready`: The resource is ready to use.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
 </div>
 </div>
@@ -149,8 +149,8 @@ See also: Resource status ({{site_prefix}}/topics/resource-status.html)
 True if there is at least one listener with a matching routing
 key (usually in a remote site).
 
-Default: False
-See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
+Default:: False
+See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
 </div>
 </div>
@@ -166,7 +166,7 @@ See also: Routing key concept ({{site_prefix}}/concepts/routing-key.html)
 A set of named conditions describing the current state of the
 resource.
 
-See also: Resource status ({{site_prefix}}/topics/resource-status.html), Kubernetes conditions (https://maelvls.dev/kubernetes-conditions/)
+See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
 </div>
 </div>

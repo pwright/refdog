@@ -17,9 +17,10 @@ skupper site status [name] [options]
 
 Display the status of a site.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Examples
+
+.Examples
 
 ```console
 # Show the status of the current site
@@ -29,91 +30,121 @@ Status:    Ready
 Message:   -
 ```
 
-## Primary options
+.Primary options
 
-[name]
-Type: string
+---
+**[name]**
+
+Type:: string
+
 Flags:: optional
+
 
 The name of the site resource.
 
 If not specified, the name is that of the site
 associated with the current namespace.
 
-See also: Kubernetes object names (https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
-Platforms: Kubernetes
-See also: Duration format (https://pkg.go.dev/time#ParseDuration)
+Platforms:: Kubernetes
+See also: [Duration format](https://pkg.go.dev/time#ParseDuration)
 
---output
-Type: (-o) <format>
+---
+**--output**
+
+Type:: (-o) <format>
+
 
 Print status to the console in a structured output format.
 
-Choices: json: <p>Produce JSON output</p>
+Choices:: json:: Produce JSON output
 
-yaml: <p>Produce YAML output</p>
+yaml:: Produce YAML output
 
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-Platforms: Kubernetes
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+Platforms:: Kubernetes
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 

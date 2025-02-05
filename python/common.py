@@ -72,18 +72,18 @@ def generate_attribute_fields(attr):
 
             default = _convert_markdown(default)
 
-        rows.append(f"Default: {default}")
+        rows.append(f"Default:: {default}")
 
     if attr.choices:
-        rows.append(f"Choices: {generate_attribute_choices(attr)}")
+        rows.append(f"Choices:: {generate_attribute_choices(attr)}")
 
     from commands import Option
 
     if attr.platforms and isinstance(attr, Option) and attr.platforms != attr.object.platforms:
-        rows.append(f"Platforms: {', '.join(attr.platforms)}")
+        rows.append(f"Platforms:: {', '.join(attr.platforms)}")
 
     if attr.updatable:
-        rows.append(f"Updatable: {attr.updatable}")
+        rows.append(f"Updatable:: {attr.updatable}")
 
     links = generate_attribute_links(attr)
 
@@ -100,7 +100,7 @@ def generate_attribute_choices(attr):
         description = choice_data["description"].replace("\n", " ").strip()
         description = _convert_markdown(description)
 
-        rows.append(f"{name}: {description}")
+        rows.append(f"{name}:: {description}")
 
     return "\n".join(rows)
 
@@ -113,7 +113,7 @@ def generate_attribute_links(attr):
         if url.startswith("/"):
             url = "{{site_prefix}}" + url
 
-        out.append(f"{title} ({url})")
+        out.append(f"[{title}]({url})")
 
     return ", ".join(out)
 

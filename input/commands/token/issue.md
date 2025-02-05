@@ -28,10 +28,12 @@ Issuing a token requires a site with link access enabled.
 The command waits for the site to enter the ready state
 before producing the token.
 
-Platforms: Kubernetes
-Waits for: Ready
+Platforms:: Kubernetes
 
-## Examples
+Waits for:: Ready
+
+
+.Examples
 
 ```console
 # Issue an access token
@@ -55,111 +57,148 @@ $ skupper token issue ~/token.yaml --expiration-window 24h --redemptions-allowed
 $ skupper token issue ~/token.yaml --grant west-1
 ```
 
-## Primary options
+.Primary options
 
-&lt;file&gt;
-Type: string
+---
+**&lt;file&gt;**
+
+Type:: string
+
 Flags:: required
+
 
 The name of the token file to create.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
---timeout
-Type: <duration>
+---
+**--timeout**
+
+Type:: <duration>
+
 
 Raise an error if the operation does not complete in the given
 period of time.
 
-Default: <p>60s</p>
+Default:: 60s
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
---expiration-window
-Type: <duration>
+---
+**--expiration-window**
+
+Type:: <duration>
+
 
 The period of time in which an access token for this
 grant can be redeemed.
 
-Default: <p>15m</p>
+Default:: 15m
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
---redemptions-allowed
-Type: <integer>
+---
+**--redemptions-allowed**
+
+Type:: <integer>
+
 
 The number of times an access token for this grant can
 be redeemed.
 
-Default: 1
-Platforms: Kubernetes, Docker, Podman, Linux
+Default:: 1
+Platforms:: Kubernetes, Docker, Podman, Linux
 
---grant
-Type: <name>
+---
+**--grant**
+
+Type:: <name>
+
 Flags:: advanced
+
 
 Use the named access grant instead of creating a new
 one.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Global options
+.Global options
 
---context
-Type: <name>
+---
+**--context**
+
+Type:: <name>
+
 Flags:: global
+
 
 Set the kubeconfig context.
 
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---kubeconfig
-Type: <file>
+---
+**--kubeconfig**
+
+Type:: <file>
+
 Flags:: global
+
 
 Set the path to the kubeconfig file.
 
-See also: Kubernetes kubeconfigs (https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
+See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
---namespace
-Type: (-n) <name>
+---
+**--namespace**
+
+Type:: (-n) <name>
+
 Flags:: global
+
 
 Set the current namespace.
 
-Platforms: Kubernetes, Docker, Podman, Linux
-See also: Kubernetes namespaces (https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), System namespaces ({{site_prefix}}/topics/system-namespaces.html)
+Platforms:: Kubernetes, Docker, Podman, Linux
+See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
---platform
-Type: <platform>
+---
+**--platform**
+
+Type:: <platform>
+
 Flags:: global
+
 
 Set the Skupper platform.
 
 <!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
 
-Default: <p>kubernetes</p>
+Default:: kubernetes
 
-Choices: kubernetes: <p>Kubernetes</p>
+Choices:: kubernetes:: Kubernetes
 
-docker: <p>Docker</p>
+docker:: Docker
 
-podman: <p>Podman</p>
+podman:: Podman
 
-linux: <p>Linux</p>
+linux:: Linux
 
-Platforms: Kubernetes, Docker, Podman, Linux
-See also: Platform concept ({{site_prefix}}/concepts/platform.html)
+Platforms:: Kubernetes, Docker, Podman, Linux
+See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
---help
-Type: (-h) boolean
+---
+**--help**
+
+Type:: (-h) boolean
+
 Flags:: global
+
 
 Display help and exit.
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Errors
+.Errors
 
 - **Link access is not enabled**
 

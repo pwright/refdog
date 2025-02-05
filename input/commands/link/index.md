@@ -17,9 +17,10 @@ refdog_object_has_attributes: true
 skupper link [subcommand] [options]
 ```
 
-Platforms: Kubernetes, Docker, Podman, Linux
+Platforms:: Kubernetes, Docker, Podman, Linux
 
-## Subcommands
+
+.Subcommands
 
 - [Link update]({{site_prefix}}/commands/link/update.html): Change link settings
 - [Link delete]({{site_prefix}}/commands/link/delete.html): Delete a link
