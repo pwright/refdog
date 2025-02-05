@@ -28,61 +28,34 @@ use an [access token][token] to obtain a link.
 
 [token]: access-token.html
 
-## Metadata properties
+.Metadata properties
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-name">name</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.name
+*Type:* `string`
 
 The name of the resource.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-namespace">namespace</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.namespace
+*Type:* `string`
 
 The namespace of the resource.
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
+.Spec properties
 
-## Spec properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-endpoints">endpoints</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.endpoints
+*Type:* `array`
 
 An array of connection endpoints. Each item has a name, host,
 port, and group.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-cost">cost</h3>
-<div class="attribute-type-info">integer</div>
-</div>
-<div class="attribute-body">
+.cost
+*Type:* `integer`
 
 The configured routing cost of sending traffic over
 the link.
@@ -90,15 +63,8 @@ the link.
 Default:: 1
 See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-tls-credentials">tlsCredentials</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.tlsCredentials
+*Type:* `string`
 
 The name of a bundle of certificates used for mutual TLS
 router-to-router communication.  The bundle contains the
@@ -113,16 +79,8 @@ directory under `input/certs/` in the current namespace.
 
 See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-settings">settings</h3>
-<div class="attribute-type-info">object</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.settings
+*Type:* `object`
 
 A map containing additional settings.  Each map entry has a
 string name and a string value.
@@ -132,17 +90,10 @@ their default values.
 
 See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
-</div>
-</div>
+.Status properties
 
-## Status properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-status">status</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.status
+*Type:* `string`
 
 The current state of the resource.
 
@@ -153,59 +104,30 @@ The current state of the resource.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-message">message</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.message
+*Type:* `string`
 
 A human-readable status message.  Error messages are reported
 here.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-remote-site-id">remoteSiteId</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.remoteSiteId
+*Type:* `string`
 
 The unique ID of the site linked to.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-remote-site-name">remoteSiteName</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.remoteSiteName
+*Type:* `string`
 
 The name of the site linked to.
 
 
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="status-conditions">conditions</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.conditions
+*Type:* `array`
 
 A set of named conditions describing the current state of the
 resource.
@@ -218,6 +140,3 @@ resource.
   are true.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
-
-</div>
-</div>

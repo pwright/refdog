@@ -24,22 +24,22 @@ def generate(model):
     append()
 
     for group in model.groups:
-        append(f"#### {group.title}")
+        append(f"## {group.title}")
         append()
-        append("<table class=\"objects\">")
+
+        append("| Resource | Summary |")
+        append("|----------|---------|")
 
         for resource in group.objects:
-            append(f"<tr><th><a href=\"{resource.href}\">{resource.title}</a></th><td>{resource.summary}</td></tr>")
+            append(f"| [{resource.title}]({resource.href}) | {resource.summary} |")
             adoc_href = resource.href.replace(".html", ".adoc").replace("{{site_prefix}}/resources/", "")
             append_adoc(f"include::{adoc_href}[leveloffset=+1]")
             append_adoc()
 
-        append("</table>")
         append()
 
     append.write("input/resources/index.md")
     append_adoc.write("input/resources/resources.adoc")
-
 
     for resource in model.resources:
         generate_resource(resource)
@@ -65,24 +65,24 @@ def generate_resource(resource):
         append()
 
     if resource.examples:
-        append("## Examples")
+        append(".Examples")
         append()
 
         for example in resource.examples:
             append(example["description"].strip() + ":")
             append()
-            append("~~~ yaml")
+            append("```yaml")
             append(example["yaml"].strip())
-            append("~~~")
+            append("```")
             append()
 
-    append("## Metadata properties")
+    append(".Metadata properties")
     append()
 
     for prop in resource.metadata_properties:
         generate_property(prop, append)
 
-    append("## Spec properties")
+    append(".Spec properties")
     append()
 
     for group in ("required", "frequently-used", None, "advanced"):
@@ -90,7 +90,7 @@ def generate_resource(resource):
             if prop.group == group:
                 generate_property(prop, append)
 
-    append("## Status properties")
+    append(".Status properties")
     append()
 
     for group in ("required", "frequently-used", None, "advanced"):
@@ -107,40 +107,20 @@ def generate_property(prop, append):
         debug(f"{prop} is hidden")
         return
 
-    classes = ["attribute"]
-    flags = list()
-
     if prop.format:
         type_info = f"{prop.type} ({prop.format})"
     else:
         type_info = prop.type
 
-    if prop.group:
-        flags.append(prop.group.replace("-", " "))
-
-    if prop.group not in ("required", "frequently-used", None):
-        classes.append("collapsed")
-
-    append(f"<div class=\"{' '.join(classes)}\">")
-    append(f"<div class=\"attribute-heading\">")
-    append(f"<h3 id=\"{prop.id}\">{prop.name}</h3>")
-    append(f"<div class=\"attribute-type-info\">{type_info}</div>")
-
-    if flags:
-        append(f"<div class=\"attribute-flags\">{', '.join(flags)}</div>")
-
-    append("</div>")
-    append("<div class=\"attribute-body\">")
-    append()
+    append(f".{prop.name}")
+    append(f"*Type:* `{type_info}`")
 
     if prop.description:
+        append()
         append(prop.description.strip())
         append()
 
     append(generate_attribute_fields(prop))
-    append()
-    append("</div>")
-    append("</div>")
     append()
 
 class ResourceModel(Model):

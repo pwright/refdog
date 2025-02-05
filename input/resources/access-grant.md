@@ -22,60 +22,34 @@ expiration window and for a limited number of redemptions.
 The `code`, `url`, and `ca` properties of the resource
 status are used to generate access tokens from the grant.
 
-## Metadata properties
+.Metadata properties
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-name">name</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.name
+*Type:* `string`
 
 The name of the resource.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-namespace">namespace</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.namespace
+*Type:* `string`
 
 The namespace of the resource.
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
+.Spec properties
 
-## Spec properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-redemptions-allowed">redemptionsAllowed</h3>
-<div class="attribute-type-info">integer</div>
-</div>
-<div class="attribute-body">
+.redemptionsAllowed
+*Type:* `integer`
 
 The number of times an access token for this grant can
 be redeemed.
 
 Default:: 1
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-expiration-window">expirationWindow</h3>
-<div class="attribute-type-info">string (duration)</div>
-</div>
-<div class="attribute-body">
+.expirationWindow
+*Type:* `string (duration)`
 
 The period of time in which an access token for this
 grant can be redeemed.
@@ -83,16 +57,8 @@ grant can be redeemed.
 Default:: 15m
 
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-code">code</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.code
+*Type:* `string`
 
 The secret code to use to authenticate access tokens submitted
 for redemption.
@@ -102,16 +68,8 @@ status property.
 
 
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-issuer">issuer</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.issuer
+*Type:* `string`
 
 The name of a Kubernetes secret used to generate a
 certificate when redeeming a token for this grant.
@@ -120,16 +78,8 @@ If not set, `defaultIssuer` on the Site rsource is used.
 
 See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-settings">settings</h3>
-<div class="attribute-type-info">object</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.settings
+*Type:* `object`
 
 A map containing additional settings.  Each map entry has a
 string name and a string value.
@@ -139,17 +89,10 @@ their default values.
 
 See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
-</div>
-</div>
+.Status properties
 
-## Status properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-status">status</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.status
+*Type:* `string`
 
 The current state of the resource.
 
@@ -160,88 +103,46 @@ The current state of the resource.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-message">message</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.message
+*Type:* `string`
 
 A human-readable status message.  Error messages are reported
 here.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-redemptions">redemptions</h3>
-<div class="attribute-type-info">integer</div>
-</div>
-<div class="attribute-body">
+.redemptions
+*Type:* `integer`
 
 The number of times a token for this grant has been
 redeemed.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-expiration-time">expirationTime</h3>
-<div class="attribute-type-info">string (date-time)</div>
-</div>
-<div class="attribute-body">
+.expirationTime
+*Type:* `string (date-time)`
 
 The point in time when the grant expires.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-url">url</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.url
+*Type:* `string`
 
 The URL of the token-redemption service for this grant.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-ca">ca</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.ca
+*Type:* `string`
 
 The trusted server certificate of the token-redemption
 service for this grant.
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-code">code</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.code
+*Type:* `string`
 
 The secret code used to authenticate access tokens
 submitted for redemption.
@@ -249,16 +150,8 @@ submitted for redemption.
 Default:: <em>Generated</em>
 
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="status-conditions">conditions</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.conditions
+*Type:* `array`
 
 A set of named conditions describing the current state of the
 resource.
@@ -271,6 +164,3 @@ resource.
   conditions are true.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
-
-</div>
-</div>

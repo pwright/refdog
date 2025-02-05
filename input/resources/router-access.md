@@ -15,46 +15,26 @@ Configuration for secure access to the site router.  The
 configuration includes TLS credentials and router ports.  The
 RouterAccess resource is used to implement link access for sites.
 
-## Metadata properties
+.Metadata properties
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-name">name</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.name
+*Type:* `string`
 
 The name of the resource.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-namespace">namespace</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.namespace
+*Type:* `string`
 
 The namespace of the resource.
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
+.Spec properties
 
-## Spec properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-roles">roles</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.roles
+*Type:* `array`
 
 The named interfaces by which a router can be accessed.  These
 include "inter-router" for links between interior routers and
@@ -62,16 +42,8 @@ include "inter-router" for links between interior routers and
 
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-tls-credentials">tlsCredentials</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.tlsCredentials
+*Type:* `string`
 
 The name of a bundle of TLS certificates used for mutual TLS
 router-to-router communication.  The bundle contains the
@@ -86,40 +58,16 @@ directory under `input/certs/` in the current namespace.
 
 See also: [Router TLS]({{site_prefix}}/topics/router-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-generate-tls-credentials">generateTlsCredentials</h3>
-<div class="attribute-type-info">boolean</div>
-</div>
-<div class="attribute-body">
-
+.generateTlsCredentials
+*Type:* `boolean`
 Default:: False
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-issuer">issuer</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.issuer
+*Type:* `string`
 
 
-
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-access-type">accessType</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
-
+.accessType
+*Type:* `string`
 Default:: <em>On OpenShift, the default is <code>route</code>.  For other
 Kubernetes flavors, the default is <code>loadbalancer</code>.</em>
 
@@ -128,15 +76,8 @@ Choices:: route:: Use an OpenShift route.  <em>OpenShift only.</em>
 loadbalancer:: Use a Kubernetes load balancer.
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-bind-host">bindHost</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.bindHost
+*Type:* `string`
 
 The hostname or IP address of the network interface to bind
 to.  By default, Skupper binds all the interfaces on the host.
@@ -144,15 +85,8 @@ to.  By default, Skupper binds all the interfaces on the host.
 Default:: 0.0.0.0
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-subject-alternative-names">subjectAlternativeNames</h3>
-<div class="attribute-type-info">array</div>
-</div>
-<div class="attribute-body">
+.subjectAlternativeNames
+*Type:* `array`
 
 The hostnames and IPs secured by the router TLS certificate.
 
@@ -160,16 +94,8 @@ Default:: <em>The current hostname and the IP address of each bound network
 interface</em>
 
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-settings">settings</h3>
-<div class="attribute-type-info">object</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.settings
+*Type:* `object`
 
 A map containing additional settings.  Each map entry has a
 string name and a string value.
@@ -179,17 +105,10 @@ their default values.
 
 See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
-</div>
-</div>
+.Status properties
 
-## Status properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-status">status</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.status
+*Type:* `string`
 
 The current state of the resource.
 
@@ -200,31 +119,16 @@ The current state of the resource.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-message">message</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.message
+*Type:* `string`
 
 A human-readable status message.  Error messages are reported
 here.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="status-conditions">conditions</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.conditions
+*Type:* `array`
 
 A set of named conditions describing the current state of the
 resource.
@@ -238,21 +142,10 @@ resource.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="status-endpoints">endpoints</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.endpoints
+*Type:* `array`
 
 An array of connection endpoints.  Each item has a name, host,
 port, and group.
 
 
-
-</div>
-</div>

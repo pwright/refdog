@@ -21,12 +21,12 @@ A Listener resource specifies a host and port for accepting
 connections from local clients.  To expose a multi-port service,
 create multiple listeners with the same host value.
 
-## Examples
+.Examples
 
 A listener in site West for the Hello World backend service
 in site East:
 
-~~~ yaml
+```yaml
 apiVersion: skupper.io/v2alpha1
 kind: Listener
 metadata:
@@ -36,48 +36,28 @@ spec:
   routingKey: backend
   host: backend
   port: 8080
-~~~
+```
 
-## Metadata properties
+.Metadata properties
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-name">name</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.name
+*Type:* `string`
 
 The name of the resource.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="metadata-namespace">namespace</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.namespace
+*Type:* `string`
 
 The namespace of the resource.
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html), [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
+.Spec properties
 
-## Spec properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-routing-key">routingKey</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.routingKey
+*Type:* `string`
 
 The identifier used to route traffic from listeners to
 connectors.  To enable connecting to a service at a
@@ -87,16 +67,8 @@ must have matching routing keys.
 Updatable:: True
 See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-host">host</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.host
+*Type:* `string`
 
 The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
@@ -104,16 +76,8 @@ establish connections to the remote service.
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="spec-port">port</h3>
-<div class="attribute-type-info">integer</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+.port
+*Type:* `integer`
 
 The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
@@ -121,32 +85,16 @@ the remote service.
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-expose-pods-by-name">exposePodsByName</h3>
-<div class="attribute-type-info">boolean</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.exposePodsByName
+*Type:* `boolean`
 
 If true, expose each pod as an individual service.
 
 Default:: False
 See also: [Individual pod services]({{site_prefix}}/topics/individual-pod-services.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-tls-credentials">tlsCredentials</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.tlsCredentials
+*Type:* `string`
 
 The name of a bundle of TLS certificates used for secure
 client-to-router communication.  The bundle contains the
@@ -160,16 +108,8 @@ namespace.
 
 See also: [Application TLS]({{site_prefix}}/topics/application-tls.html), [Kubernetes TLS secrets](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets), [System TLS credentials]({{site_prefix}}/topics/system-tls-credentials.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="spec-settings">settings</h3>
-<div class="attribute-type-info">object</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.settings
+*Type:* `object`
 
 A map containing additional settings.  Each map entry has a
 string name and a string value.
@@ -184,17 +124,10 @@ their default values.
 
 See also: [Resource settings]({{site_prefix}}/topics/resource-settings.html)
 
-</div>
-</div>
+.Status properties
 
-## Status properties
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-status">status</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.status
+*Type:* `string`
 
 The current state of the resource.
 
@@ -205,30 +138,16 @@ The current state of the resource.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-message">message</h3>
-<div class="attribute-type-info">string</div>
-</div>
-<div class="attribute-body">
+.message
+*Type:* `string`
 
 A human-readable status message.  Error messages are reported
 here.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="status-has-matching-connector">hasMatchingConnector</h3>
-<div class="attribute-type-info">boolean</div>
-</div>
-<div class="attribute-body">
+.hasMatchingConnector
+*Type:* `boolean`
 
 True if there is at least one connector with a matching
 routing key (usually in a remote site).
@@ -236,16 +155,8 @@ routing key (usually in a remote site).
 Default:: False
 See also: [Routing key concept]({{site_prefix}}/concepts/routing-key.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="status-conditions">conditions</h3>
-<div class="attribute-type-info">array</div>
-<div class="attribute-flags">advanced</div>
-</div>
-<div class="attribute-body">
+.conditions
+*Type:* `array`
 
 A set of named conditions describing the current state of the
 resource.
@@ -259,6 +170,3 @@ resource.
   are true.
 
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html), [Kubernetes conditions](https://maelvls.dev/kubernetes-conditions/)
-
-</div>
-</div>
