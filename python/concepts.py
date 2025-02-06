@@ -8,8 +8,6 @@ def generate(model):
     make_dir("input/concepts")
         # AsciiDoc output
     append_adoc = StringBuilder()
-    append_adoc("== Skupper concepts")
-    append_adoc()
 
     append = StringBuilder()
 
@@ -22,8 +20,6 @@ def generate(model):
     append("  - title: Command index")
     append("    url: /commands/index.html")
     append("---")
-    append()
-    append("# Skupper concepts")
     append()
 
     for group in model.groups:

@@ -7,8 +7,6 @@ def generate(model):
 
     append = StringBuilder()
     append_adoc = StringBuilder()
-    append_adoc("== Skupper resources")
-    append_adoc()
 
     append("---")
     append("refdog_links:")

@@ -8,8 +8,6 @@ refdog_links:
     url: /resources/index.md
 ---
 
-# Skupper commands
-
 ## Site operations
 
 ### [Site]({{site_prefix}}/commands/site/index.html)

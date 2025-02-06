@@ -19,18 +19,16 @@ def generate(model):
     append_md("    url: /resources/index.md")
     append_md("---")
     append_md()
-    append_md("# Skupper commands")
-    append_md()
-
+    
     # AsciiDoc output
-    append_adoc("== Skupper commands")
+    append_adoc("= Skupper commands")
     append_adoc()
 
     for group in model.groups:
         append_md(f"## {group.title}")
         append_md()
 
-        append_adoc(f"== {group.title}")
+        append_adoc(f"== Group: {group.title}")
         append_adoc()
 
         for command in group.objects:
@@ -40,7 +38,7 @@ def generate(model):
             append_md()
 
             adoc_href = command.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
-            append_adoc(f"=== {command.title}")
+            append_adoc(f"=== cmd: {command.title}")
             append_adoc()
             append_adoc(f"include::{adoc_href}[leveloffset=+1]")
             append_adoc()
@@ -54,7 +52,7 @@ def generate(model):
                 
                 for sc in command.subcommands:
                     sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
-                    append_adoc(f"=== {sc.title}")
+                    append_adoc(f"=== sub: {sc.title}")
                     append_adoc()
                     append_adoc(f"{sc.summary}")
                     append_adoc()

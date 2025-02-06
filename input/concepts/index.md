@@ -8,8 +8,6 @@ refdog_links:
     url: /commands/index.html
 ---
 
-# Skupper concepts
-
 #### Sites
 
 <table class="objects">
