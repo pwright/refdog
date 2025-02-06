@@ -15,20 +15,20 @@ refdog_object_has_attributes: true
 
 # Listener create command
 
-```shell
+~~~ shell
 skupper listener create <name> <port> [options]
-```
+~~~
 
 Create a listener.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
-Waits for:: Configured
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
+| Waits for  | Configured |
 
 .Examples
 
-```console
+~~~ console
 # Create a listener for a database
 $ skupper listener create database 5432
 Waiting for status...
@@ -36,17 +36,17 @@ Listener "database" is configured.
 
 # Set the routing key and host explicitly
 $ skupper listener create backend 8080 --routing-key be1 --host apiserver
-```
+~~~
 
 .Primary options
 
----
-**&lt;name&gt;**
-
-Type:: string
-
-Flags:: required
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-name">&lt;name&gt;</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">required</div>
+</div>
+<div class="attribute-body">
 
 The name of the resource to be created.
 
@@ -56,13 +56,16 @@ The name is the default routing key and host if the
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
----
-**&lt;port&gt;**
+</div>
+</div>
 
-Type:: integer
-
-Flags:: required
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-port">&lt;port&gt;</h3>
+<div class="attribute-type-info">integer</div>
+<div class="attribute-flags">required</div>
+</div>
+<div class="attribute-body">
 
 The port of the local listener.  Clients at this site use
 the listener host and port to establish connections to
@@ -70,13 +73,16 @@ the remote service.
 
 Updatable:: True
 
----
-**--routing-key**
+</div>
+</div>
 
-Type:: <string>
-
-Flags:: frequently used
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-routing-key">--routing-key</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+<div class="attribute-flags">frequently used</div>
+</div>
+<div class="attribute-body">
 
 The identifier used to route traffic from listeners to
 connectors.  To enable connecting to a service at a
@@ -87,13 +93,16 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
----
-**--host**
+</div>
+</div>
 
-Type:: <string>
-
-Flags:: frequently used
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-host">--host</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+<div class="attribute-flags">frequently used</div>
+</div>
+<div class="attribute-body">
 
 The hostname or IP address of the local listener.  Clients
 at this site use the listener host and port to
@@ -103,11 +112,15 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
----
-**--wait**
+</div>
+</div>
 
-Type:: <status>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-wait">--wait</h3>
+<div class="attribute-type-info">&lt;status&gt;</div>
+</div>
+<div class="attribute-body">
 
 Wait for the given status before exiting.
 
@@ -122,11 +135,15 @@ ready:: Wait until the resource is ready to use.
 Platforms:: Kubernetes
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
----
-**--timeout**
+</div>
+</div>
 
-Type:: <duration>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-timeout">--timeout</h3>
+<div class="attribute-type-info">&lt;duration&gt;</div>
+</div>
+<div class="attribute-body">
 
 Raise an error if the operation does not complete in the given
 period of time.
@@ -136,53 +153,65 @@ Default:: 60s
 Platforms:: Kubernetes
 See also: [Duration format](https://pkg.go.dev/time#ParseDuration)
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -200,14 +229,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

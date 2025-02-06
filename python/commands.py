@@ -5,37 +5,37 @@ def generate(model):
 
     make_dir("input/commands")
 
-    append_md = StringBuilder()
+    append = StringBuilder()
     append_adoc = StringBuilder()
 
     # Markdown output
-    append_md("---")
-    append_md("refdog_links:")
-    append_md("  - title: Command overview")
-    append_md("    url: overview.md")
-    append_md("  - title: Concept index")
-    append_md("    url: /concepts/index.md")
-    append_md("  - title: Resource index")
-    append_md("    url: /resources/index.md")
-    append_md("---")
-    append_md()
+    append("---")
+    append("refdog_links:")
+    append("  - title: Command overview")
+    append("    url: overview.html")
+    append("  - title: Concept index")
+    append("    url: /concepts/index.html")
+    append("  - title: Resource index")
+    append("    url: /resources/index.html")
+    append("---")
+    append()
     
     # AsciiDoc output
     append_adoc("= Skupper commands")
     append_adoc()
 
     for group in model.groups:
-        append_md(f"## {group.title}")
-        append_md()
+        append(f"## {group.title}")
+        append()
 
         append_adoc(f"== Group: {group.title}")
         append_adoc()
 
         for command in group.objects:
-            append_md(f"### [{command.title}]({command.href})")
-            append_md()
-            append_md(f"{command.summary}")
-            append_md()
+            append(f"### [{command.title}]({command.href})")
+            append()
+            append(f"{command.summary}")
+            append()
 
             adoc_href = command.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
             append_adoc(f"=== cmd: {command.title}")
@@ -44,11 +44,11 @@ def generate(model):
             append_adoc()
 
             if command.subcommands:
-                append_md("#### Subcommands")
-                append_md()
+                append("#### Subcommands")
+                append()
                 for sc in command.subcommands:
-                    append_md(f"- [{sc.title}]({sc.href}): {sc.summary}")
-                append_md()
+                    append(f"- [{sc.title}]({sc.href}): {sc.summary}")
+                append()
                 
                 for sc in command.subcommands:
                     sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
@@ -60,14 +60,14 @@ def generate(model):
                 append_adoc()
 
     
-    append_md.write("input/commands/index.md")
+    append.write("input/commands/index.md")
     append_adoc.write("input/commands/commands.adoc")
 
     for command in model.commands:
         generate_command(command)
+
         for subcommand in command.subcommands:
             generate_command(subcommand)
-
 
 def generate_command(command):
     notice(f"Generating {command.input_file}")
@@ -80,9 +80,9 @@ def generate_command(command):
     append()
     append(f"# {command.title_with_type}")
     append()
-    append("```shell")
+    append("~~~ shell")
     append(f"{generate_usage(command)}")
-    append("```")
+    append("~~~")
     append()
 
     if command.description and not command.subcommands:
@@ -95,36 +95,43 @@ def generate_command(command):
     if command.output:
         append("## Output")
         append()
-        append("```console")
+        append("~~~ console")
         append(command.output.strip())
-        append("```")
+        append("~~~")
         append()
 
     if command.subcommands:
         append(".Subcommands")
         append()
+    
+        append("| Command | Description |")
+        append("|---------|-------------|")
+
         for sc in command.subcommands:
-            append(f"- [{sc.title}]({sc.href}): {sc.summary}")
+            append(f"| [{sc.title}]({sc.href}) | {sc.summary} |")
+
         append()
     else:
         if command.examples:
             append(".Examples")
             append()
-            append("```console")
+            append("~~~ console")
             append(command.examples.strip())
-            append("```")
+            append("~~~")
             append()
 
         if command.options:
             append(".Primary options")
             append()
+
             for group in ("positional", "required", "frequently-used", None, "advanced"):
                 for option in command.options:
                     if option.group == group:
                         generate_option(option, append)
-            
+
             append(".Global options")
             append()
+
             for option in command.options:
                 if option.group == "global":
                     generate_option(option, append)
@@ -132,6 +139,7 @@ def generate_command(command):
         if command.errors:
             append(".Errors")
             append()
+
             for error in command.errors:
                 generate_error(error, append)
 
@@ -156,29 +164,32 @@ def generate_usage(command):
 
     return " ".join(parts)
 
-
 def generate_command_fields(command):
     rows = list()
-    rows.append(f"Platforms:: {', '.join(command.platforms)}\n")
+
+    rows.append("| Field       | Value |")
+    rows.append("|------------|-------|")
+    rows.append(f"| Platforms  | {', '.join(command.platforms)} |")
 
     if command.wait:
-        rows.append(f"Waits for:: {command.wait}\n")
-    
-    return "\n".join(rows)
+        rows.append(f"| Waits for  | {command.wait} |")
 
+    return "\n".join(rows)
 
 def generate_option(option, append):
     debug(f"Generating {option}")
 
+    classes = ["attribute"]
     flags = list()
+    prefix = ""
     option_key = option.syntax_name
     type_info = option.type
 
     if not option.positional and option.type != "boolean":
         if option.placeholder:
-            type_info = f"<{option.placeholder}>"
+            type_info = f"&lt;{option.placeholder}&gt;"
         else:
-            type_info = f"<{option.type}>"
+            type_info = f"&lt;{option.type}&gt;"
 
     if option.short_option:
         type_info = f"(-{option.short_option}) {type_info}"
@@ -192,19 +203,29 @@ def generate_option(option, append):
         else:
             flags.append(option.group.replace("-", " "))
 
-    append(f"---\n**{option_key}**\n")
-    append(f"Type:: {type_info}\n")
+    if option.group not in ("positional", "required", "frequently-used", None):
+        classes.append("collapsed")
+
+    append(f"<div class=\"{' '.join(classes)}\">")
+    append(f"<div class=\"attribute-heading\">")
+    append(f"<h3 id=\"{option.id}\">{option_key}</h3>")
+    append(f"<div class=\"attribute-type-info\">{type_info}</div>")
 
     if flags:
-        append(f"Flags:: {', '.join(flags)}\n")
-    
+        append(f"<div class=\"attribute-flags\">{', '.join(flags)}</div>")
+
+    append("</div>")
+    append("<div class=\"attribute-body\">")
     append()
-    
+
     if option.description:
         append(option.description.strip())
         append()
-    
+
     append(generate_attribute_fields(option))
+    append()
+    append("</div>")
+    append("</div>")
     append()
 
 def generate_error(error, append):
@@ -212,7 +233,7 @@ def generate_error(error, append):
     append()
 
     if error.description:
-        append(f"  {error.description.strip()}")
+        append(f"  {error.description.strip()}\n")
         append()
 
 class CommandModel(Model):

@@ -1,4 +1,7 @@
 = Ref
+:toc:
+:toclevels: 5
+:imagesdir: input/concepts/images/
 
 == Skupper concepts
 include::concepts.adoc[leveloffset=+1]

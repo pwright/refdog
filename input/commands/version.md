@@ -5,18 +5,19 @@ refdog_object_has_attributes: true
 
 # Version command
 
-```shell
+~~~ shell
 skupper version [options]
-```
+~~~
 
 Display versions of Skupper components.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
 
 .Examples
 
-```console
+~~~ console
 # Show component versions
 $ skupper version
 COMPONENT          VERSION
@@ -44,15 +45,16 @@ components:
       kube-adaptor:
         name: quay.io/skupper/kube-adaptor:2.0.0
         digest: sha256:4dc24bb3d605ed3fcec2f8ef7d45ca883d9d87b278bfedd5fcca74281d617a5e
-```
+~~~
 
 .Primary options
 
----
-**--output**
-
-Type:: (-o) <format>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-output">--output</h3>
+<div class="attribute-type-info">(-o) &lt;format&gt;</div>
+</div>
+<div class="attribute-body">
 
 Produce verbose structured output.
 
@@ -61,53 +63,65 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -125,14 +139,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

@@ -7,9 +7,9 @@ refdog_object_has_attributes: true
 
 # System reload command
 
-```shell
+~~~ shell
 skupper system reload [options]
-```
+~~~
 
 Reload the site configuration.  This restarts the systemd
 service for the current namespace.
@@ -18,5 +18,6 @@ service for the current namespace.
 a router adaptor service, we could avoid a router restart for some
 config changes.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |

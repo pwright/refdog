@@ -4,4 +4,3 @@ asciidoctor-reducer input/commands/commands.adoc > commands.adoc
 asciidoctor-reducer input/concepts/concepts.adoc > concepts.adoc
 asciidoctor-reducer input/resources/resources.adoc > resources.adoc
 asciidoctor-reducer skupper.ad > export.adoc
-python3 sub.py

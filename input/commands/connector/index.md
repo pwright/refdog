@@ -13,17 +13,20 @@ refdog_object_has_attributes: true
 
 # Connector command
 
-```shell
+~~~ shell
 skupper connector [subcommand] [options]
-```
+~~~
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
 
 .Subcommands
 
-- [Connector create]({{site_prefix}}/commands/connector/create.html): Create a connector
-- [Connector update]({{site_prefix}}/commands/connector/update.html): Update a connector
-- [Connector delete]({{site_prefix}}/commands/connector/delete.html): Delete a connector
-- [Connector status]({{site_prefix}}/commands/connector/status.html): Display the status of connectors in the current site
-- [Connector generate]({{site_prefix}}/commands/connector/generate.html): Generate a Connector resource
+| Command | Description |
+|---------|-------------|
+| [Connector create]({{site_prefix}}/commands/connector/create.html) | Create a connector |
+| [Connector update]({{site_prefix}}/commands/connector/update.html) | Update a connector |
+| [Connector delete]({{site_prefix}}/commands/connector/delete.html) | Delete a connector |
+| [Connector status]({{site_prefix}}/commands/connector/status.html) | Display the status of connectors in the current site |
+| [Connector generate]({{site_prefix}}/commands/connector/generate.html) | Generate a Connector resource |

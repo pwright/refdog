@@ -15,9 +15,9 @@ refdog_object_has_attributes: true
 
 # Token issue command
 
-```shell
+~~~ shell
 skupper token issue <file> [options]
-```
+~~~
 
 Issue a token file redeemable for a link to the current site.
 
@@ -28,14 +28,14 @@ Issuing a token requires a site with link access enabled.
 The command waits for the site to enter the ready state
 before producing the token.
 
-Platforms:: Kubernetes
-
-Waits for:: Ready
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes |
+| Waits for  | Ready |
 
 .Examples
 
-```console
+~~~ console
 # Issue an access token
 $ skupper token issue ~/token.yaml
 Waiting for status...
@@ -55,27 +55,31 @@ $ skupper token issue ~/token.yaml --expiration-window 24h --redemptions-allowed
 
 # Issue a token using an existing access grant
 $ skupper token issue ~/token.yaml --grant west-1
-```
+~~~
 
 .Primary options
 
----
-**&lt;file&gt;**
-
-Type:: string
-
-Flags:: required
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-file">&lt;file&gt;</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">required</div>
+</div>
+<div class="attribute-body">
 
 The name of the token file to create.
 
 Platforms:: Kubernetes, Docker, Podman, Linux
 
----
-**--timeout**
+</div>
+</div>
 
-Type:: <duration>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-timeout">--timeout</h3>
+<div class="attribute-type-info">&lt;duration&gt;</div>
+</div>
+<div class="attribute-body">
 
 Raise an error if the operation does not complete in the given
 period of time.
@@ -84,11 +88,15 @@ Default:: 60s
 
 Platforms:: Kubernetes, Docker, Podman, Linux
 
----
-**--expiration-window**
+</div>
+</div>
 
-Type:: <duration>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-expiration-window">--expiration-window</h3>
+<div class="attribute-type-info">&lt;duration&gt;</div>
+</div>
+<div class="attribute-body">
 
 The period of time in which an access token for this
 grant can be redeemed.
@@ -97,11 +105,15 @@ Default:: 15m
 
 Platforms:: Kubernetes, Docker, Podman, Linux
 
----
-**--redemptions-allowed**
+</div>
+</div>
 
-Type:: <integer>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-redemptions-allowed">--redemptions-allowed</h3>
+<div class="attribute-type-info">&lt;integer&gt;</div>
+</div>
+<div class="attribute-body">
 
 The number of times an access token for this grant can
 be redeemed.
@@ -109,65 +121,80 @@ be redeemed.
 Default:: 1
 Platforms:: Kubernetes, Docker, Podman, Linux
 
----
-**--grant**
+</div>
+</div>
 
-Type:: <name>
-
-Flags:: advanced
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-grant">--grant</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">advanced</div>
+</div>
+<div class="attribute-body">
 
 Use the named access grant instead of creating a new
 one.
 
 Platforms:: Kubernetes, Docker, Podman, Linux
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 Platforms:: Kubernetes, Docker, Podman, Linux
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -186,17 +213,23 @@ linux:: Linux
 Platforms:: Kubernetes, Docker, Podman, Linux
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 Platforms:: Kubernetes, Docker, Podman, Linux
+
+</div>
+</div>
 
 .Errors
 
@@ -205,3 +238,4 @@ Platforms:: Kubernetes, Docker, Podman, Linux
   Link access at this site is not currently enabled.  You
 can use "skupper site update --enable-link-access" to
 enable it.
+

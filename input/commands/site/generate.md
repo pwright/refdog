@@ -11,18 +11,19 @@ refdog_object_has_attributes: true
 
 # Site generate command
 
-```shell
+~~~ shell
 skupper site generate <name> [options]
-```
+~~~
 
 Generate a Site resource.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
 
 .Examples
 
-```console
+~~~ console
 # Generate a Site resource and print it to the console
 $ skupper site generate west --enable-link-access
 apiVersion: skupper.io/v2alpha1
@@ -34,29 +35,32 @@ spec:
 
 # Generate a Site resource and direct the output to a file
 $ skupper site generate east > east.yaml
-```
+~~~
 
 .Primary options
 
----
-**&lt;name&gt;**
-
-Type:: string
-
-Flags:: required
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-name">&lt;name&gt;</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">required</div>
+</div>
+<div class="attribute-body">
 
 The name of the resource to be generated.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
----
-**--enable-link-access**
+</div>
+</div>
 
-Type:: boolean
-
-Flags:: frequently used
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-enable-link-access">--enable-link-access</h3>
+<div class="attribute-type-info">boolean</div>
+<div class="attribute-flags">frequently used</div>
+</div>
+<div class="attribute-body">
 
 Allow external access for links from remote sites.
 
@@ -66,11 +70,15 @@ sites must have link access enabled.
 
 See also: [Link concept]({{site_prefix}}/concepts/link.html), [Site linking]({{site_prefix}}/topics/site-linking.html)
 
----
-**--output**
+</div>
+</div>
 
-Type:: (-o) <format>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-output">--output</h3>
+<div class="attribute-type-info">(-o) &lt;format&gt;</div>
+</div>
+<div class="attribute-body">
 
 Select the output format.
 
@@ -81,11 +89,15 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
----
-**--link-access-type**
+</div>
+</div>
 
-Type:: <type>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-link-access-type">--link-access-type</h3>
+<div class="attribute-type-info">&lt;type&gt;</div>
+</div>
+<div class="attribute-body">
 
 Configure external access for links from remote sites.
 
@@ -105,11 +117,15 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [Site linking]({{site_prefix}}/topics/site-linking.html)
 
----
-**--enable-ha**
+</div>
+</div>
 
-Type:: boolean
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-enable-ha">--enable-ha</h3>
+<div class="attribute-type-info">boolean</div>
+</div>
+<div class="attribute-body">
 
 Configure the site for high availability (HA).  HA sites
 have two active routers.
@@ -124,15 +140,18 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [High availability]({{site_prefix}}/topics/high-availability.html)
 
+</div>
+</div>
+
 .Global options
 
----
-**--platform**
-
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -150,14 +169,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

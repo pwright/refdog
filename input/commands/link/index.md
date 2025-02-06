@@ -13,16 +13,19 @@ refdog_object_has_attributes: true
 
 # Link command
 
-```shell
+~~~ shell
 skupper link [subcommand] [options]
-```
+~~~
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
 
 .Subcommands
 
-- [Link update]({{site_prefix}}/commands/link/update.html): Change link settings
-- [Link delete]({{site_prefix}}/commands/link/delete.html): Delete a link
-- [Link status]({{site_prefix}}/commands/link/status.html): Display the status of links in the current site
-- [Link generate]({{site_prefix}}/commands/link/generate.html): Generate a Link resource for use in a remote site
+| Command | Description |
+|---------|-------------|
+| [Link update]({{site_prefix}}/commands/link/update.html) | Change link settings |
+| [Link delete]({{site_prefix}}/commands/link/delete.html) | Delete a link |
+| [Link status]({{site_prefix}}/commands/link/status.html) | Display the status of links in the current site |
+| [Link generate]({{site_prefix}}/commands/link/generate.html) | Generate a Link resource for use in a remote site |

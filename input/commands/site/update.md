@@ -11,20 +11,20 @@ refdog_object_has_attributes: true
 
 # Site update command
 
-```shell
+~~~ shell
 skupper site update [name] [options]
-```
+~~~
 
 Change site settings.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
-Waits for:: Ready
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
+| Waits for  | Ready |
 
 .Examples
 
-```console
+~~~ console
 # Update the current site to accept links
 $ skupper site update --enable-link-access
 Waiting for status...
@@ -32,17 +32,17 @@ Site "west" is ready.
 
 # Update multiple settings
 $ skupper site update --enable-link-access --service-account alice
-```
+~~~
 
 .Primary options
 
----
-**[name]**
-
-Type:: string
-
-Flags:: optional
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-name">[name]</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">optional</div>
+</div>
+<div class="attribute-body">
 
 The name of the site resource.
 
@@ -51,13 +51,16 @@ associated with the current namespace.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
----
-**--enable-link-access**
+</div>
+</div>
 
-Type:: boolean
-
-Flags:: frequently used
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-enable-link-access">--enable-link-access</h3>
+<div class="attribute-type-info">boolean</div>
+<div class="attribute-flags">frequently used</div>
+</div>
+<div class="attribute-body">
 
 Allow external access for links from remote sites.
 
@@ -67,11 +70,15 @@ sites must have link access enabled.
 
 See also: [Link concept]({{site_prefix}}/concepts/link.html), [Site linking]({{site_prefix}}/topics/site-linking.html)
 
----
-**--link-access-type**
+</div>
+</div>
 
-Type:: <type>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-link-access-type">--link-access-type</h3>
+<div class="attribute-type-info">&lt;type&gt;</div>
+</div>
+<div class="attribute-body">
 
 Configure external access for links from remote sites.
 
@@ -91,11 +98,15 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [Site linking]({{site_prefix}}/topics/site-linking.html)
 
----
-**--enable-ha**
+</div>
+</div>
 
-Type:: boolean
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-enable-ha">--enable-ha</h3>
+<div class="attribute-type-info">boolean</div>
+</div>
+<div class="attribute-body">
 
 Configure the site for high availability (HA).  HA sites
 have two active routers.
@@ -110,11 +121,15 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [High availability]({{site_prefix}}/topics/high-availability.html)
 
----
-**--timeout**
+</div>
+</div>
 
-Type:: <duration>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-timeout">--timeout</h3>
+<div class="attribute-type-info">&lt;duration&gt;</div>
+</div>
+<div class="attribute-body">
 
 Raise an error if the operation does not complete in the given
 period of time.
@@ -123,11 +138,15 @@ Default:: 60s
 
 Platforms:: Kubernetes
 
----
-**--wait**
+</div>
+</div>
 
-Type:: <status>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-wait">--wait</h3>
+<div class="attribute-type-info">&lt;status&gt;</div>
+</div>
+<div class="attribute-body">
 
 Wait for the given status before exiting.
 
@@ -142,53 +161,65 @@ ready:: Ready
 Platforms:: Kubernetes
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -206,20 +237,27 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>
 
 .Errors
 
 - **No site resource exists**
 
   There is no existing Skupper site resource to update.
+

@@ -13,9 +13,9 @@ refdog_object_has_attributes: true
 
 # Link generate command
 
-```shell
+~~~ shell
 skupper link generate [name] [options]
-```
+~~~
 
 Generate a Link resource for use in a remote site.
 
@@ -23,14 +23,14 @@ Generating a link requires a site with link access enabled.
 The command waits for the site to enter the ready state
 before producing the link.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
-Waits for:: Site resource ready
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
+| Waits for  | Site resource ready |
 
 .Examples
 
-```console
+~~~ console
 # Generate a Link resource and print it to the console
 $ skupper link generate
 apiVersion: skupper.io/v2alpha1
@@ -61,28 +61,32 @@ data:
 
 # Generate a Link resource and direct the output to a file
 $ skupper link generate > link.yaml
-```
+~~~
 
 .Primary options
 
----
-**[name]**
-
-Type:: string
-
-Flags:: optional
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-name">[name]</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">optional</div>
+</div>
+<div class="attribute-body">
 
 The name of the resource to be generated.  A name is
 generated if none is provided.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
----
-**--cost**
+</div>
+</div>
 
-Type:: <integer>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-cost">--cost</h3>
+<div class="attribute-type-info">&lt;integer&gt;</div>
+</div>
+<div class="attribute-body">
 
 The configured routing cost of sending traffic over
 the link.
@@ -90,11 +94,15 @@ the link.
 Default:: 1
 See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
----
-**--output**
+</div>
+</div>
 
-Type:: (-o) <format>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-output">--output</h3>
+<div class="attribute-type-info">(-o) &lt;format&gt;</div>
+</div>
+<div class="attribute-body">
 
 Select the output format.
 
@@ -105,53 +113,65 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -169,14 +189,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

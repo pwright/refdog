@@ -13,45 +13,49 @@ refdog_object_has_attributes: true
 
 # Link update command
 
-```shell
+~~~ shell
 skupper link update <name> [options]
-```
+~~~
 
 Change link settings.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
-Waits for:: Ready
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
+| Waits for  | Ready |
 
 .Examples
 
-```console
+~~~ console
 # Change the link cost
 $ skupper link update west-6bfn6 --cost 10
 Waiting for status...
 Link "west-6bfn6" is ready.
-```
+~~~
 
 .Primary options
 
----
-**&lt;name&gt;**
-
-Type:: string
-
-Flags:: required
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-name">&lt;name&gt;</h3>
+<div class="attribute-type-info">string</div>
+<div class="attribute-flags">required</div>
+</div>
+<div class="attribute-body">
 
 The name of the resource to be updated.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
----
-**--cost**
+</div>
+</div>
 
-Type:: <integer>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-cost">--cost</h3>
+<div class="attribute-type-info">&lt;integer&gt;</div>
+</div>
+<div class="attribute-body">
 
 The configured routing cost of sending traffic over
 the link.
@@ -59,11 +63,15 @@ the link.
 Default:: 1
 See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
----
-**--timeout**
+</div>
+</div>
 
-Type:: <duration>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-timeout">--timeout</h3>
+<div class="attribute-type-info">&lt;duration&gt;</div>
+</div>
+<div class="attribute-body">
 
 Raise an error if the operation does not complete in the given
 period of time.
@@ -72,11 +80,15 @@ Default:: 60s
 
 Platforms:: Kubernetes
 
----
-**--wait**
+</div>
+</div>
 
-Type:: <status>
-
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-wait">--wait</h3>
+<div class="attribute-type-info">&lt;status&gt;</div>
+</div>
+<div class="attribute-body">
 
 Wait for the given status before exiting.
 
@@ -91,53 +103,65 @@ ready:: Ready
 Platforms:: Kubernetes
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
+</div>
+</div>
+
 .Global options
 
----
-**--context**
-
-Type:: <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-context">--context</h3>
+<div class="attribute-type-info">&lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--kubeconfig**
+</div>
+</div>
 
-Type:: <file>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;file&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
----
-**--namespace**
+</div>
+</div>
 
-Type:: (-n) <name>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-namespace">--namespace</h3>
+<div class="attribute-type-info">(-n) &lt;name&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
----
-**--platform**
+</div>
+</div>
 
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -155,14 +179,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

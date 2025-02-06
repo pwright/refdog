@@ -9,37 +9,42 @@ refdog_object_has_attributes: true
 
 # System uninstall command
 
-```shell
+~~~ shell
 skupper system uninstall [options]
-```
+~~~
 
 Remove local system infrastructure.
 
 This operation fails if sites are present.  Use the
 `--force` option to override.
 
-Platforms:: Kubernetes, Docker, Podman, Linux
-
+| Field       | Value |
+|------------|-------|
+| Platforms  | Kubernetes, Docker, Podman, Linux |
 
 .Primary options
 
----
-**--force**
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-force">--force</h3>
+<div class="attribute-type-info">boolean</div>
+</div>
+<div class="attribute-body">
 
-Type:: boolean
 
 
-
+</div>
+</div>
 
 .Global options
 
----
-**--platform**
-
-Type:: <platform>
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-platform">--platform</h3>
+<div class="attribute-type-info">&lt;platform&gt;</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Set the Skupper platform.
 
@@ -57,14 +62,20 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
----
-**--help**
+</div>
+</div>
 
-Type:: (-h) boolean
-
-Flags:: global
-
+<div class="attribute collapsed">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">(-h) boolean</div>
+<div class="attribute-flags">global</div>
+</div>
+<div class="attribute-body">
 
 Display help and exit.
 
 
+
+</div>
+</div>

@@ -1,11 +1,11 @@
 ---
 refdog_links:
   - title: Command overview
-    url: overview.md
+    url: overview.html
   - title: Concept index
-    url: /concepts/index.md
+    url: /concepts/index.html
   - title: Resource index
-    url: /resources/index.md
+    url: /resources/index.html
 ---
 
 ## Site operations
