@@ -52,9 +52,9 @@ def generate(model):
                 
                 for sc in command.subcommands:
                     sc_href = sc.href.replace(".html", ".adoc").replace("{{site_prefix}}/commands/", "")
-                    append_adoc(f"=== sub: {sc.title}")
-                    append_adoc()
-                    append_adoc(f"{sc.summary}")
+                    #append_adoc(f"=== sub: {sc.title}")
+                    #append_adoc()
+                    #append_adoc(f"{sc.summary}")
                     append_adoc()
                     append_adoc(f"include::{sc_href}[leveloffset=+1]")
                 append_adoc()
@@ -206,16 +206,17 @@ def generate_option(option, append):
     if option.group not in ("positional", "required", "frequently-used", None):
         classes.append("collapsed")
 
-    append(f"<div class=\"{' '.join(classes)}\">")
-    append(f"<div class=\"attribute-heading\">")
-    append(f"<h3 id=\"{option.id}\">{option_key}</h3>")
-    append(f"<div class=\"attribute-type-info\">{type_info}</div>")
+    #append(f"<div class=\"{' '.join(classes)}\">")
+    #append(f"<div class=\"attribute-heading\">")
+    #append(f"[\"{option.id}\"]")
+    append(f"{option_key}")
+    #append(f"<div class=\"attribute-type-info\">{type_info}</div>")
 
     if flags:
-        append(f"<div class=\"attribute-flags\">{', '.join(flags)}</div>")
+        append(f"{', '.join(flags)}")
 
-    append("</div>")
-    append("<div class=\"attribute-body\">")
+    #append("</div>")
+    #append("<div class=\"attribute-body\">")
     append()
 
     if option.description:
@@ -224,9 +225,9 @@ def generate_option(option, append):
 
     append(generate_attribute_fields(option))
     append()
-    append("</div>")
-    append("</div>")
-    append()
+    #append("</div>")
+    #append("</div>")
+    #append()
 
 def generate_error(error, append):
     append(f"- **{error.message}**")

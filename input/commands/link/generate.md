@@ -65,28 +65,15 @@ $ skupper link generate > link.yaml
 
 .Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-name">[name]</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">optional</div>
-</div>
-<div class="attribute-body">
+[name]
+optional
 
 The name of the resource to be generated.  A name is
 generated if none is provided.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-cost">--cost</h3>
-<div class="attribute-type-info">&lt;integer&gt;</div>
-</div>
-<div class="attribute-body">
+--cost
 
 The configured routing cost of sending traffic over
 the link.
@@ -94,15 +81,7 @@ the link.
 Default:: 1
 See also: [Load balancing]({{site_prefix}}/topics/load-balancing.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-output">--output</h3>
-<div class="attribute-type-info">(-o) &lt;format&gt;</div>
-</div>
-<div class="attribute-body">
+--output
 
 Select the output format.
 
@@ -113,65 +92,33 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
-</div>
-</div>
-
 .Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-context">--context</h3>
-<div class="attribute-type-info">&lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--context
+global
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-kubeconfig">--kubeconfig</h3>
-<div class="attribute-type-info">&lt;file&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--kubeconfig
+global
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--namespace
+global
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+global
 
 Set the Skupper platform.
 
@@ -189,20 +136,9 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+global
 
 Display help and exit.
 
 
-
-</div>
-</div>

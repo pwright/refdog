@@ -45,43 +45,22 @@ $ skupper connector generate backend 8080 > backend.yaml
 
 .Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-name">&lt;name&gt;</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;name&gt;
+required
 
 The name of the resource to be generated.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-port">&lt;port&gt;</h3>
-<div class="attribute-type-info">integer</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;port&gt;
+required
 
 The port on the target server to connect to.
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-routing-key">--routing-key</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--routing-key
+frequently used
 
 The identifier used to route traffic from listeners to
 connectors.  To expose a local workload to a remote site, the
@@ -92,16 +71,8 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-workload">--workload</h3>
-<div class="attribute-type-info">&lt;resource&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--workload
+frequently used
 
 A Kubernetes resource name that identifies a workload.  It uses
 `<resource-type>/<resource-name>` syntax and resolves to an
@@ -113,15 +84,7 @@ This is an alternative to setting the `--selector` or
 Platforms:: Kubernetes
 See also: [Kubernetes workloads](https://kubernetes.io/docs/concepts/workloads/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-selector">--selector</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-</div>
-<div class="attribute-body">
+--selector
 
 A Kubernetes label selector for specifying target server pods.  It
 uses `<label-name>=<label-value>` syntax.
@@ -135,15 +98,7 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [Kubernetes label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-host">--host</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-</div>
-<div class="attribute-body">
+--host
 
 The hostname or IP address of the server.  This is an
 alternative to `selector` for specifying the target server.
@@ -155,15 +110,7 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-wait">--wait</h3>
-<div class="attribute-type-info">&lt;status&gt;</div>
-</div>
-<div class="attribute-body">
+--wait
 
 Wait for the given status before exiting.
 
@@ -176,15 +123,7 @@ configured:: Configured
 ready:: Ready
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-output">--output</h3>
-<div class="attribute-type-info">(-o) &lt;format&gt;</div>
-</div>
-<div class="attribute-body">
+--output
 
 Select the output format.
 
@@ -195,18 +134,10 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
-</div>
-</div>
-
 .Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+global
 
 Set the Skupper platform.
 
@@ -224,20 +155,9 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+global
 
 Display help and exit.
 
 
-
-</div>
-</div>

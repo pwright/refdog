@@ -39,28 +39,15 @@ $ skupper site generate east > east.yaml
 
 .Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-name">&lt;name&gt;</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;name&gt;
+required
 
 The name of the resource to be generated.
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-enable-link-access">--enable-link-access</h3>
-<div class="attribute-type-info">boolean</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--enable-link-access
+frequently used
 
 Allow external access for links from remote sites.
 
@@ -70,15 +57,7 @@ sites must have link access enabled.
 
 See also: [Link concept]({{site_prefix}}/concepts/link.html), [Site linking]({{site_prefix}}/topics/site-linking.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-output">--output</h3>
-<div class="attribute-type-info">(-o) &lt;format&gt;</div>
-</div>
-<div class="attribute-body">
+--output
 
 Select the output format.
 
@@ -89,15 +68,7 @@ Choices:: json:: Produce JSON output
 yaml:: Produce YAML output
 
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-link-access-type">--link-access-type</h3>
-<div class="attribute-type-info">&lt;type&gt;</div>
-</div>
-<div class="attribute-body">
+--link-access-type
 
 Configure external access for links from remote sites.
 
@@ -117,15 +88,7 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [Site linking]({{site_prefix}}/topics/site-linking.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-enable-ha">--enable-ha</h3>
-<div class="attribute-type-info">boolean</div>
-</div>
-<div class="attribute-body">
+--enable-ha
 
 Configure the site for high availability (HA).  HA sites
 have two active routers.
@@ -140,18 +103,10 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [High availability]({{site_prefix}}/topics/high-availability.html)
 
-</div>
-</div>
-
 .Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+global
 
 Set the Skupper platform.
 
@@ -169,20 +124,9 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+global
 
 Display help and exit.
 
 
-
-</div>
-</div>

@@ -43,13 +43,8 @@ $ skupper connector create backend 8080 --workload deployment/backend
 
 .Primary options
 
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-name">&lt;name&gt;</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;name&gt;
+required
 
 The name of the resource to be created.
 
@@ -61,31 +56,15 @@ the default pod selector if the `--selector` and
 
 See also: [Kubernetes object names](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-port">&lt;port&gt;</h3>
-<div class="attribute-type-info">integer</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
+&lt;port&gt;
+required
 
 The port on the target server to connect to.
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-routing-key">--routing-key</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--routing-key
+frequently used
 
 The identifier used to route traffic from listeners to
 connectors.  To expose a local workload to a remote site, the
@@ -96,16 +75,8 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-workload">--workload</h3>
-<div class="attribute-type-info">&lt;resource&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
+--workload
+frequently used
 
 A Kubernetes resource name that identifies a workload.  It uses
 `<resource-type>/<resource-name>` syntax and resolves to an
@@ -117,15 +88,7 @@ This is an alternative to setting the `--selector` or
 Platforms:: Kubernetes
 See also: [Kubernetes workloads](https://kubernetes.io/docs/concepts/workloads/)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-selector">--selector</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-</div>
-<div class="attribute-body">
+--selector
 
 A Kubernetes label selector for specifying target server pods.  It
 uses `<label-name>=<label-value>` syntax.
@@ -139,15 +102,7 @@ Platforms:: Kubernetes
 Updatable:: True
 See also: [Kubernetes label selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-host">--host</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-</div>
-<div class="attribute-body">
+--host
 
 The hostname or IP address of the server.  This is an
 alternative to `selector` for specifying the target server.
@@ -159,15 +114,7 @@ Default:: <em>Value of name</em>
 
 Updatable:: True
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-wait">--wait</h3>
-<div class="attribute-type-info">&lt;status&gt;</div>
-</div>
-<div class="attribute-body">
+--wait
 
 Wait for the given status before exiting.
 
@@ -182,15 +129,7 @@ ready:: Wait until the resource is ready to use.
 Platforms:: Kubernetes
 See also: [Resource status]({{site_prefix}}/topics/resource-status.html)
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-timeout">--timeout</h3>
-<div class="attribute-type-info">&lt;duration&gt;</div>
-</div>
-<div class="attribute-body">
+--timeout
 
 Raise an error if the operation does not complete in the given
 period of time.
@@ -200,65 +139,33 @@ Default:: 60s
 Platforms:: Kubernetes
 See also: [Duration format](https://pkg.go.dev/time#ParseDuration)
 
-</div>
-</div>
-
 .Global options
 
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-context">--context</h3>
-<div class="attribute-type-info">&lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--context
+global
 
 Set the kubeconfig context.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-kubeconfig">--kubeconfig</h3>
-<div class="attribute-type-info">&lt;file&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--kubeconfig
+global
 
 Set the path to the kubeconfig file.
 
 Platforms:: Kubernetes
 See also: [Kubernetes kubeconfigs](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--namespace
+global
 
 Set the current namespace.
 
 See also: [Kubernetes namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/), [System namespaces]({{site_prefix}}/topics/system-namespaces.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--platform
+global
 
 Set the Skupper platform.
 
@@ -276,20 +183,9 @@ linux:: Linux
 
 See also: [Platform concept]({{site_prefix}}/concepts/platform.html)
 
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
+--help
+global
 
 Display help and exit.
 
 
-
-</div>
-</div>
