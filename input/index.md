@@ -6,6 +6,6 @@ body_class: object index
 
 [Skupper concepts](concepts/index.html)
 
-[Skupper API resources](resources/index.html)
+[API reference](resources/index.html)
 
-[Skupper CLI commands](commands/index.html)
+[CLI reference](commands/index.html)

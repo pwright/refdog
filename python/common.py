@@ -355,6 +355,10 @@ class ModelObjectAttribute:
         # Other related things here?
 
         for id in self.links:
+            # XXX Topic links are temporarily disabled
+            if id.startswith("skupper/"):
+                continue
+
             try:
                 link_data = _named_links[id]
             except KeyError:
