@@ -189,22 +189,22 @@ window.addEventListener("load", () => {
     }
 });
 
-// Function to open an image in fullscreen
-function openFullscreen(elem) {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.mozRequestFullScreen) { // Firefox
-    elem.mozRequestFullScreen();
-  } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { // IE/Edge
-    elem.msRequestFullscreen();
-  }
-}
+// // Function to open an image in fullscreen
+// function openFullscreen(elem) {
+//   if (elem.requestFullscreen) {
+//     elem.requestFullscreen();
+//   } else if (elem.mozRequestFullScreen) { // Firefox
+//     elem.mozRequestFullScreen();
+//   } else if (elem.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+//     elem.webkitRequestFullscreen();
+//   } else if (elem.msRequestFullscreen) { // IE/Edge
+//     elem.msRequestFullscreen();
+//   }
+// }
 
-// Attach click event listeners to all img elements
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("click", () => {
-    openFullscreen(img);
-  });
-});
+// // Attach click event listeners to all img elements
+// document.querySelectorAll("img").forEach(img => {
+//   img.addEventListener("click", () => {
+//     openFullscreen(img);
+//   });
+// });
