@@ -16,4 +16,5 @@ wait:
   description: Waits for Configured status by default
 options:
   port:
+    type: int
     group: frequently-used

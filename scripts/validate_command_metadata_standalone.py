@@ -78,16 +78,31 @@ def parse_cli_doc_file(file_path):
                     name = long.strip() if long else short.strip()
                     name = name.lstrip('-')
                     
+                    # Determine type
+                    # If no explicit type and description doesn't start with uppercase, it's likely a bool flag
+                    if opt_type:
+                        # Check if opt_type is actually part of description (starts with lowercase)
+                        if opt_type[0].islower() and desc and desc[0].islower():
+                            # opt_type is probably part of description, this is a bool flag
+                            inferred_type = 'bool'
+                            desc = opt_type + ' ' + desc if desc else opt_type
+                        else:
+                            inferred_type = opt_type.lower()
+                    else:
+                        # No type specified, assume bool for flags
+                        inferred_type = 'bool'
+                    
                     current_option = {
                         'name': name,
-                        'type': opt_type.lower() if opt_type else 'string',
-                        'description': desc.strip()
+                        'type': inferred_type,
+                        'description': desc.strip() if desc else ''
                     }
                     
                     # Extract default from description
-                    default_match = re.search(r'\(default[:\s]+([^)]+)\)', desc)
-                    if default_match:
-                        current_option['default'] = default_match.group(1).strip()
+                    if desc:
+                        default_match = re.search(r'\(default[:\s]+([^)]+)\)', desc)
+                        if default_match:
+                            current_option['default'] = default_match.group(1).strip()
     
     # Add last option
     if current_option:

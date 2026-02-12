@@ -40,6 +40,3 @@ errors:
 wait:
   default: Ready
   description: Waits for Ready status by default
-options:
-  grant:
-    group: advanced

@@ -19,4 +19,5 @@ wait:
   description: Waits for Deletion status by default
 options:
   all:
+    type: bool
     group: frequently-used
