@@ -32,7 +32,7 @@ def update_crds():
     """
     Update the CRD source files
     """
-    url = "https://github.com/skupperproject/skupper/archive/refs/heads/v2.tar.gz"
+    url = "https://github.com/skupperproject/skupper/archive/refs/heads/main.tar.gz"
     crd_dir = get_absolute_path("crds")
 
     with temp_file() as temp:
@@ -45,4 +45,4 @@ def update_crds():
             assert is_dir(extracted_dir)
 
             with working_dir(extracted_dir):
-                copy("api/types/crds", crd_dir, inside=False)
+                copy("config/crd/bases/", crd_dir, inside=False)

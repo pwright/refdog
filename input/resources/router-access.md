@@ -97,6 +97,10 @@ directory under `input/certs/` in the current namespace.
 </div>
 <div class="attribute-body">
 
+When set, Skupper generates the TLS credentials to be
+stored in the Secret specified by `tlsCredentials`. See
+also `issuer`.
+
 <table class="fields"><tr><th>Default</th><td>False</td></table>
 
 </div>
@@ -109,6 +113,10 @@ directory under `input/certs/` in the current namespace.
 </div>
 <div class="attribute-body">
 
+The name of the Kubernetes Secret containing the signing CA
+used to generate TLS certificates for the RouterAccess when
+`generateTlsCredentials` is set.
+
 
 
 </div>
@@ -120,6 +128,15 @@ directory under `input/certs/` in the current namespace.
 <div class="attribute-type-info">string</div>
 </div>
 <div class="attribute-body">
+
+Configures the access type for the router endpoints.
+Available access types and the default selection is
+configured on the Skupper controller for Kubernetes.
+
+The options available by default are:
+  - `local`: No external ingress. Implies a Kubernetes Service with type CluterIP.
+  - `route`: Exposed via an OpenShift Route.
+  - `loadbalancer`: Exposed via a Kubernetes Service with type LoadBalancer.
 
 <table class="fields"><tr><th>Default</th><td><p><em>On OpenShift, the default is <code>route</code>.  For other
 Kubernetes flavors, the default is <code>loadbalancer</code>.</em></p>

@@ -155,8 +155,13 @@ class Model:
 
             if yaml_file in exclude:
                 continue
+            
+            # Skip directories (e.g., metadata/)
+            file_path = join(self.config_dir, yaml_file)
+            if not yaml_file.endswith('.yaml') and not yaml_file.endswith('.md'):
+                continue
 
-            obj_data = read_yaml(join(self.config_dir, yaml_file))
+            obj_data = read_yaml(file_path)
             obj = self.object_class(self, obj_data)
 
             self.objects.append(obj)
