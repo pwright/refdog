@@ -30,7 +30,7 @@ def generate_diagrams():
 @command
 def update_crds():
     """
-    Update the CRD source files
+    Update the CRD source files from main
     """
     url = "https://github.com/skupperproject/skupper/archive/refs/heads/main.tar.gz"
     crd_dir = get_absolute_path("crds")
@@ -46,3 +46,11 @@ def update_crds():
 
             with working_dir(extracted_dir):
                 copy("config/crd/bases/", crd_dir, inside=False)
+
+
+@command
+def update_cli():
+    """
+    Update the CLI files using ../skupper/generate-doc
+    """
+    run("../skupper/generate-doc ./cli-doc")
