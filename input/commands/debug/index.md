@@ -16,5 +16,6 @@ skupper debug [subcommand] [options]
 
 <table class="objects">
 <tr><th><a href="{{site.prefix}}/commands/debug/check.html">Debug check</a></th><td>Run diagnostic checks</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/debug/dump.html">Debug dump</a></th><td>Generate a debug dump file</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/debug/dump.html">Debug dump</a></th><td>Create a tarball including site resources and status; component versions, config files,  	and logs; and info about the environment where Skupper is running
+</td></tr>
 </table>

@@ -222,6 +222,9 @@ def post_process_option(option):
             option['type'] = 'string'
         elif any(word in desc.lower() for word in ['enable', 'disable']) and 'type' not in option:
             option['type'] = 'boolean'
+        else:
+            # Default to boolean for flags without explicit type
+            option['type'] = 'boolean'
 
 def extract_examples(content):
     """Extract examples from the Examples section"""

@@ -1,4 +1,6 @@
 from resources import *
+from cli_parser import parse_all_cli_docs
+import os
 
 def generate(model):
     notice("Generating commands")
@@ -226,6 +228,17 @@ class CommandModel(Model):
 
         self.option_data = read_yaml(join(self.config_dir, "options.yaml"))
 
+        # NEW: Load cli-doc files (proof of concept)
+        self.cli_docs = {}
+        cli_doc_dir = "cli-doc"
+        if os.path.exists(cli_doc_dir):
+            notice("Loading cli-doc files...")
+            try:
+                self.cli_docs = parse_all_cli_docs(cli_doc_dir)
+                notice(f"Loaded {len(self.cli_docs)} cli-doc files")
+            except Exception as e:
+                warning(f"Failed to load cli-doc files: {e}")
+
         self.init(exclude=["options.yaml", "overview.md"])
 
     @property
@@ -261,11 +274,31 @@ class Command(ModelObject):
         self.parent = parent
         self.subcommands = list()
 
+        # NEW: Try to get cli-doc and metadata for this command
+        cli_doc = self._get_cli_doc_data()
+        metadata = self._get_metadata()
+
+        # Use cli-doc data if available (all commands, not just site create)
+        if cli_doc:
+            # Override description from cli-doc synopsis
+            if cli_doc.get("synopsis"):
+                self.data["description"] = cli_doc["synopsis"]
+
+        # Load options
         self.options = list()
         self.options_by_name = dict()
 
-        for data in self.merge_option_data():
-            option = Option(self.model, self, data)
+        # Use cli-doc options if available, otherwise fall back to YAML merge
+        if cli_doc and cli_doc.get("options"):
+            option_data_list = cli_doc.get("options", [])
+            # Convert cli-doc format to expected format
+            option_data_list = self._convert_cli_doc_options(option_data_list)
+        else:
+            # Fall back to traditional YAML merge
+            option_data_list = self.merge_option_data()
+
+        for opt_data in option_data_list:
+            option = Option(self.model, self, opt_data)
 
             self.options.append(option)
             self.options_by_name[option.name] = option
@@ -286,6 +319,52 @@ class Command(ModelObject):
             return f"{self.__class__.__name__} '{self.parent.name} {self.name}'"
         else:
             return super().__repr__()
+
+    def _get_cli_doc_data(self):
+        """Get cli-doc data for this command (POC helper)."""
+        if not hasattr(self.model, 'cli_docs') or not self.model.cli_docs:
+            return None
+
+        # Build command path: "site create"
+        parts = [self.name]
+        if self.parent:
+            parts.insert(0, self.parent.name)
+        command_path = " ".join(parts)
+
+        return self.model.cli_docs.get(command_path)
+
+    def _get_metadata(self):
+        """Get metadata for this command (POC helper)."""
+        # Build command path: "site create"
+        parts = [self.name]
+        if self.parent:
+            parts.insert(0, self.parent.name)
+        command_path = " ".join(parts)
+
+        # Try to load metadata file
+        metadata_dir = join(self.model.config_dir, "metadata")
+        metadata_file = join(metadata_dir, f"{command_path.replace(' ', '-')}.yaml")
+
+        if os.path.exists(metadata_file):
+            return read_yaml(metadata_file)
+        return {}
+
+    def _convert_cli_doc_options(self, cli_doc_options):
+        """Convert cli-doc option format to expected format."""
+        converted = []
+        for opt in cli_doc_options:
+            # Make a copy to avoid modifying original
+            converted_opt = dict(opt)
+
+            # Convert choices from list of strings to list of dicts
+            if 'choices' in converted_opt and isinstance(converted_opt['choices'], list):
+                if converted_opt['choices'] and isinstance(converted_opt['choices'][0], str):
+                    # Convert ["route", "loadbalancer"] to [{"name": "route"}, {"name": "loadbalancer"}]
+                    converted_opt['choices'] = [{"name": c, "description": ""} for c in converted_opt['choices']]
+
+            converted.append(converted_opt)
+
+        return converted
 
     def merge_option_data(self):
         model_options = self.model.option_data

@@ -14,58 +14,40 @@ refdog_object_has_attributes: true
 skupper system install [options]
 ~~~
 
-Install local system infrastructure and configure the environment.
-
-It does the following:
-
-- Checks the local environment for required resources and
-  configuration.
-- In some instances, configures the local environment.  On
-  Podman, it starts the Podman API service if it is not already
-  available.
-
-**Note:** With a long-lived controller, this operation would
-also start the controller as a user-scoped systemd service.
+Checks the local environment for required resources and configuration.
+In some instances, configures the local environment. It starts the Podman/Docker API 
+service if it is not already available.
 
 <table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td></table>
 
 ## Primary options
 
-## Global options
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the Skupper platform.
-
-<!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
-
-<table class="fields"><tr><th>Default</th><td><p><code>kubernetes</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>kubernetes</code></th><td><p>Kubernetes</p>
-</td></tr><tr><th><code>docker</code></th><td><p>Docker</p>
-</td></tr><tr><th><code>podman</code></th><td><p>Podman</p>
-</td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
-</td></tr></table></td><tr><th>See also</th><td><a href="{{site.prefix}}/concepts/platform.html">Platform concept</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
+<div class="attribute">
 <div class="attribute-heading">
 <h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
+<div class="attribute-type-info">boolean</div>
 </div>
 <div class="attribute-body">
 
-Display help and exit.
+help for install ``` ``` -c, --context string      Set the kubeconfig context
 
 
 
 </div>
 </div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+Path to the kubeconfig file to use -n, --namespace string    Set the namespace -p, --platform string     Set the platform type to use [kubernetes, podman, docker, linux] ```
+
+
+
+</div>
+</div>
+
+## Global options

@@ -23,8 +23,10 @@ skupper link [subcommand] [options]
 ## Subcommands
 
 <table class="objects">
-<tr><th><a href="{{site.prefix}}/commands/link/update.html">Link update</a></th><td>Change link settings</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/link/delete.html">Link delete</a></th><td>Delete a link</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/link/update.html">Link update</a></th><td>Change link settings
+</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/link/delete.html">Link delete</a></th><td>Delete a link by name
+</td></tr>
 <tr><th><a href="{{site.prefix}}/commands/link/status.html">Link status</a></th><td>Display the status of links in the current site</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/link/generate.html">Link generate</a></th><td>Generate a Link resource for use in a remote site</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/link/generate.html">Link generate</a></th><td>Generate a new link resource as a YAML output, unless explicitly specified otherwise using the --output flag</td></tr>
 </table>

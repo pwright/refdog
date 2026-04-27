@@ -21,9 +21,10 @@ skupper site [subcommand] [options]
 ## Subcommands
 
 <table class="objects">
-<tr><th><a href="{{site.prefix}}/commands/site/create.html">Site create</a></th><td>Create a site</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/site/update.html">Site update</a></th><td>Change site settings</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/site/delete.html">Site delete</a></th><td>Delete a site</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/site/status.html">Site status</a></th><td>Display the status of a site</td></tr>
-<tr><th><a href="{{site.prefix}}/commands/site/generate.html">Site generate</a></th><td>Generate a Site resource</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/site/create.html">Site create</a></th><td>A site is a place where components of your application are running</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/site/update.html">Site update</a></th><td>Change site settings of a given site</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/site/delete.html">Site delete</a></th><td>Delete a site
+</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/site/status.html">Site status</a></th><td>Display the current status of a site</td></tr>
+<tr><th><a href="{{site.prefix}}/commands/site/generate.html">Site generate</a></th><td>A site is a place where components of your application are running</td></tr>
 </table>

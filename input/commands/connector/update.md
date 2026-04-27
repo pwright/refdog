@@ -17,10 +17,11 @@ refdog_object_has_attributes: true
 # Connector update command
 
 ~~~ shell
-skupper connector update <name> <port> [options]
+skupper connector update [options]
 ~~~
 
-Update a connector.
+Clients at this site use the connector host and port to establish connections to the remote service.
+	The user can change port, host name, TLS secret, selector, connector type and routing key
 
 <table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td><tr><th>Waits for</th><td>Configured</td></table>
 
@@ -40,88 +41,14 @@ $ skupper connector update backend --routing-key be2
 
 <div class="attribute">
 <div class="attribute-heading">
-<h3 id="option-name">&lt;name&gt;</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">required</div>
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">boolean</div>
 </div>
 <div class="attribute-body">
 
-The name of the resource to be updated.
+help for update
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
 
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-port">&lt;port&gt;</h3>
-<div class="attribute-type-info">integer</div>
-<div class="attribute-flags">required</div>
-</div>
-<div class="attribute-body">
-
-The port on the target server to connect to.
-
-<table class="fields"><tr><th>Updatable</th><td>True</td></table>
-
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-routing-key">--routing-key</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
-
-The identifier used to route traffic from listeners to
-connectors.  To expose a local workload to a remote site, the
-remote listener and the local connector must have matching
-routing keys.
-
-<table class="fields"><tr><th>Default</th><td><p><em>Value of name</em></p>
-</td><tr><th>Updatable</th><td>True</td></table>
-
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-workload">--workload</h3>
-<div class="attribute-type-info">&lt;resource&gt;</div>
-<div class="attribute-flags">frequently used</div>
-</div>
-<div class="attribute-body">
-
-A Kubernetes resource name that identifies a workload.  It uses
-`<resource-type>/<resource-name>` syntax and resolves to an
-equivalent pod selector.
-
-This is an alternative to setting the `--selector` or
-`--host` options.
-
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/workloads/">Kubernetes workloads</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-selector">--selector</h3>
-<div class="attribute-type-info">&lt;string&gt;</div>
-</div>
-<div class="attribute-body">
-
-A Kubernetes label selector for specifying target server pods.  It
-uses `<label-name>=<label-value>` syntax.
-
-This is an alternative to setting the `--workload` or
-`--host` options.
-
-<table class="fields"><tr><th>Default</th><td><p><code>app=[value-of-name]</code></p>
-</td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>Updatable</th><td>True</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors">Kubernetes label selectors</a></td></table>
 
 </div>
 </div>
@@ -133,32 +60,51 @@ This is an alternative to setting the `--workload` or
 </div>
 <div class="attribute-body">
 
-The hostname or IP address of the server.  This is an
-alternative to `selector` for specifying the target server.
+The hostname or IP address of the local connector
 
-This is an alternative to setting the `--selector` or
-`--workload` options.
 
-<table class="fields"><tr><th>Default</th><td><p><em>On Kubernetes: Value of name</em><br/><em>On Docker, Podman, and Linux:</em> <code>localhost</code></p>
-</td><tr><th>Updatable</th><td>True</td></table>
 
 </div>
 </div>
 
 <div class="attribute">
 <div class="attribute-heading">
-<h3 id="option-wait">--wait</h3>
-<div class="attribute-type-info">&lt;status&gt;</div>
+<h3 id="option-include-not-ready">--include-not-ready</h3>
+<div class="attribute-type-info">boolean</div>
 </div>
 <div class="attribute-body">
 
-Wait for the given status before exiting.
+If true, include server pods that are not in the ready state.
 
-<table class="fields"><tr><th>Default</th><td><p><code>ready</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>none</code></th><td><p><em>Do not wait</em></p>
-</td></tr><tr><th><code>configured</code></th><td><p>Configured</p>
-</td></tr><tr><th><code>ready</code></th><td><p>Ready</p>
-</td></tr></table></td><tr><th>Platforms</th><td>Kubernetes</td></table>
+
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-port">--port</h3>
+<div class="attribute-type-info">&lt;int&gt;</div>
+</div>
+<div class="attribute-body">
+
+The port of the local connector -r, --routing-key string       The identifier used to route traffic from listeners to connectors
+
+
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-selector">--selector</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+A Kubernetes label selector for specifying target server pods.
+
+
 
 </div>
 </div>
@@ -170,95 +116,84 @@ Wait for the given status before exiting.
 </div>
 <div class="attribute-body">
 
-Raise an error if the operation does not complete in the given
-period of time.
+raise an error if the operation does not complete in the given period of time (expressed in seconds). (default 1m0s)
 
-<table class="fields"><tr><th>Default</th><td><p><code>60s</code></p>
-</td><tr><th>Platforms</th><td>Kubernetes</td></table>
+<table class="fields"><tr><th>Default</th><td><p><code>1m0s</code></p>
+</td></table>
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-tls-credentials">--tls-credentials</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+the name of a Kubernetes secret containing the generated or externally-supplied TLS credentials.
+
+
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-type">--type</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+The connector type. Choices: [tcp]. (default "tcp")
+
+<table class="fields"><tr><th>Default</th><td><p><code>&quot;tcp&quot;</code></p>
+</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>tcp</code></th><td></td></tr></table></td></table>
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-wait">--wait</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+Wait for the given status before exiting. Choices: configured, ready, none (default "configured")
+
+<table class="fields"><tr><th>Default</th><td><p><code>&quot;configured&quot;</code></p>
+</td></table>
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-workload">--workload</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+A Kubernetes resource name that identifies a workload expressed like resource-type/resource-name. Expected resource types: service, daemonset, deployment, and statefulset. ``` ``` -c, --context string      Set the kubeconfig context
+
+
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+Path to the kubeconfig file to use -n, --namespace string    Set the namespace -p, --platform string     Set the platform type to use [kubernetes, podman, docker, linux] ```
+
+
 
 </div>
 </div>
 
 ## Global options
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-context">--context</h3>
-<div class="attribute-type-info">&lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the kubeconfig context.
-
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-kubeconfig">--kubeconfig</h3>
-<div class="attribute-type-info">&lt;file&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the path to the kubeconfig file.
-
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the current namespace.
-
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the Skupper platform.
-
-<!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
-
-<table class="fields"><tr><th>Default</th><td><p><code>kubernetes</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>kubernetes</code></th><td><p>Kubernetes</p>
-</td></tr><tr><th><code>docker</code></th><td><p>Docker</p>
-</td></tr><tr><th><code>podman</code></th><td><p>Podman</p>
-</td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
-</td></tr></table></td><tr><th>See also</th><td><a href="{{site.prefix}}/concepts/platform.html">Platform concept</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Display help and exit.
-
-
-
-</div>
-</div>

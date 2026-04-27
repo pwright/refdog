@@ -13,10 +13,10 @@ refdog_object_has_attributes: true
 # Site update command
 
 ~~~ shell
-skupper site update [name] [options]
+skupper site update [options]
 ~~~
 
-Change site settings.
+Change site settings of a given site.
 
 <table class="fields"><tr><th>Platforms</th><td>Kubernetes, Docker, Podman, Linux</td><tr><th>Waits for</th><td>Ready</td></table>
 
@@ -36,18 +36,14 @@ $ skupper site update --enable-link-access --enable-ha
 
 <div class="attribute">
 <div class="attribute-heading">
-<h3 id="option-name">[name]</h3>
-<div class="attribute-type-info">string</div>
-<div class="attribute-flags">optional</div>
+<h3 id="option-enable-ha">--enable-ha</h3>
+<div class="attribute-type-info">boolean</div>
 </div>
 <div class="attribute-body">
 
-The name of the site resource.
+Configure the site for high availability (EnableHA). EnableHA sites have two active routers
 
-If not specified, the name is that of the site
-associated with the current namespace.
 
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/">Kubernetes object names</a></td></table>
 
 </div>
 </div>
@@ -56,17 +52,27 @@ associated with the current namespace.
 <div class="attribute-heading">
 <h3 id="option-enable-link-access">--enable-link-access</h3>
 <div class="attribute-type-info">boolean</div>
-<div class="attribute-flags">frequently used</div>
 </div>
 <div class="attribute-body">
 
-Allow external access for links from remote sites.
+allow access for incoming links from remote sites (default: false)
 
-Sites and links are the basis for creating application
-networks. In a simple two-site network, at least one of the
-sites must have link access enabled.
+<table class="fields"><tr><th>Default</th><td><p><code>false</code></p>
+</td></table>
 
-<table class="fields"><tr><th>See also</th><td><a href="{{site.prefix}}/concepts/link.html">Link concept</a></td></table>
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-help">--help</h3>
+<div class="attribute-type-info">boolean</div>
+</div>
+<div class="attribute-body">
+
+help for update
+
+
 
 </div>
 </div>
@@ -74,41 +80,13 @@ sites must have link access enabled.
 <div class="attribute">
 <div class="attribute-heading">
 <h3 id="option-link-access-type">--link-access-type</h3>
-<div class="attribute-type-info">&lt;type&gt;</div>
+<div class="attribute-type-info">&lt;string&gt;</div>
 </div>
 <div class="attribute-body">
 
-Configure external access for links from remote sites.
+configure external access for links from remote sites. Choices: [route|loadbalancer]. Default: On OpenShift, route is the default; for other Kubernetes flavors, loadbalancer is the default.
 
-Sites and links are the basis for creating application
-networks.  In a simple two-site network, at least one of
-the sites must have link access enabled.
-
-<table class="fields"><tr><th>Default</th><td><p><code>default</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>default</code></th><td><p>Use the default link access.  On OpenShift, the default is <code>route</code>.  For other Kubernetes flavors, the default is <code>loadbalancer</code>.</p>
-</td></tr><tr><th><code>route</code></th><td><p>Use an OpenShift route.  <em>OpenShift only.</em></p>
-</td></tr><tr><th><code>loadbalancer</code></th><td><p>Use a Kubernetes load balancer.  <em>Kubernetes only.</em></p>
-</td></tr></table></td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>Updatable</th><td>True</td></table>
-
-</div>
-</div>
-
-<div class="attribute">
-<div class="attribute-heading">
-<h3 id="option-enable-ha">--enable-ha</h3>
-<div class="attribute-type-info">boolean</div>
-</div>
-<div class="attribute-body">
-
-Configure the site for high availability (HA).  HA sites
-have two active routers.
-
-Note that Skupper routers are stateless, and they restart
-after failure.  This already provides a high level of
-availability.  Enabling HA goes further and reduces the
-window of downtime caused by restarts.
-
-<table class="fields"><tr><th>Default</th><td>False</td><tr><th>Platforms</th><td>Kubernetes</td><tr><th>Updatable</th><td>True</td></table>
+<table class="fields"><tr><th>Choices</th><td><table class="choices"><tr><th><code>route</code></th><td></td></tr><tr><th><code>loadbalancer</code></th><td></td></tr></table></td></table>
 
 </div>
 </div>
@@ -120,11 +98,10 @@ window of downtime caused by restarts.
 </div>
 <div class="attribute-body">
 
-Raise an error if the operation does not complete in the given
-period of time.
+raise an error if the operation does not complete in the given period of time (expressed in seconds). (default 30s)
 
-<table class="fields"><tr><th>Default</th><td><p><code>60s</code></p>
-</td><tr><th>Platforms</th><td>Kubernetes</td></table>
+<table class="fields"><tr><th>Default</th><td><p><code>30s</code></p>
+</td></table>
 
 </div>
 </div>
@@ -132,104 +109,33 @@ period of time.
 <div class="attribute">
 <div class="attribute-heading">
 <h3 id="option-wait">--wait</h3>
-<div class="attribute-type-info">&lt;status&gt;</div>
+<div class="attribute-type-info">&lt;string&gt;</div>
 </div>
 <div class="attribute-body">
 
-Wait for the given status before exiting.
+Wait for the given status before exiting. Choices: configured, ready, none (default "ready") ``` ``` -c, --context string      Set the kubeconfig context
 
-<table class="fields"><tr><th>Default</th><td><p><code>ready</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>none</code></th><td><p><em>Do not wait</em></p>
-</td></tr><tr><th><code>configured</code></th><td><p>Configured</p>
-</td></tr><tr><th><code>ready</code></th><td><p>Ready</p>
-</td></tr></table></td><tr><th>Platforms</th><td>Kubernetes</td></table>
+<table class="fields"><tr><th>Default</th><td><p><code>&quot;ready&quot;</code></p>
+</td></table>
+
+</div>
+</div>
+
+<div class="attribute">
+<div class="attribute-heading">
+<h3 id="option-kubeconfig">--kubeconfig</h3>
+<div class="attribute-type-info">&lt;string&gt;</div>
+</div>
+<div class="attribute-body">
+
+Path to the kubeconfig file to use -n, --namespace string    Set the namespace -p, --platform string     Set the platform type to use [kubernetes, podman, docker, linux] ```
+
+
 
 </div>
 </div>
 
 ## Global options
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-context">--context</h3>
-<div class="attribute-type-info">&lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the kubeconfig context.
-
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-kubeconfig">--kubeconfig</h3>
-<div class="attribute-type-info">&lt;file&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the path to the kubeconfig file.
-
-<table class="fields"><tr><th>Platforms</th><td>Kubernetes</td><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Kubernetes kubeconfigs</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-namespace">--namespace</h3>
-<div class="attribute-type-info">(-n) &lt;name&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the current namespace.
-
-<table class="fields"><tr><th>See also</th><td><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Kubernetes namespaces</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-platform">--platform</h3>
-<div class="attribute-type-info">&lt;platform&gt;</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Set the Skupper platform.
-
-<!-- You can also use the `SKUPPER_PLATFORM` environment variable. -->
-
-<table class="fields"><tr><th>Default</th><td><p><code>kubernetes</code></p>
-</td><tr><th>Choices</th><td><table class="choices"><tr><th><code>kubernetes</code></th><td><p>Kubernetes</p>
-</td></tr><tr><th><code>docker</code></th><td><p>Docker</p>
-</td></tr><tr><th><code>podman</code></th><td><p>Podman</p>
-</td></tr><tr><th><code>linux</code></th><td><p>Linux</p>
-</td></tr></table></td><tr><th>See also</th><td><a href="{{site.prefix}}/concepts/platform.html">Platform concept</a></td></table>
-
-</div>
-</div>
-
-<div class="attribute collapsed">
-<div class="attribute-heading">
-<h3 id="option-help">--help</h3>
-<div class="attribute-type-info">(-h) boolean</div>
-<div class="attribute-flags">global</div>
-</div>
-<div class="attribute-body">
-
-Display help and exit.
-
-
-
-</div>
-</div>
 
 ## Errors
 
